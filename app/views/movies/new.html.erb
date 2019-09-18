@@ -23,8 +23,10 @@
 
   <div class="field">
     <%= form.label :watched_by %>
-    <%= form.text_field :watched_by %>
+    <%= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
   </div>
+
+
 
   <%# Label.all.each do |label| %>
     <%# if  label.user_id.nil? %>
