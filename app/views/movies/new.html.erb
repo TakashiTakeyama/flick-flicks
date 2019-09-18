@@ -1,2 +1,48 @@
-<h1>Movies#new</h1>
-<p>Find me in app/views/movies/new.html.erb</p>
+<%= form_with(model:@movie, local: true) do |form| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "#{t('view.error')}") %></h2>
+
+      <ul>
+        <% @movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :watched_by %>
+    <%= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
+  </div>
+
+
+
+  <%# Label.all.each do |label| %>
+    <%# if  label.user_id.nil? %>
+      <%#= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
+<!--      <label><%#= label.label_name %></label>-->
+    <%# end %>
+
+    <%# if label.user_id == current_user.id %>
+      <%#= form.check_box :label_ids, { multipie: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
+<!--      <label><%#= label.label_name %></label>-->
+    <%# end %>
+  <%# end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", movies_path %>
