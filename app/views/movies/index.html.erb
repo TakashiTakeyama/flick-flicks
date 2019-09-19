@@ -1,2 +1,42 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<% if @movies.find_by(params[:user_id]).present? %>
+<!--  <h3><%#= "#{@movies.find_by(params[:user_id]).user.name}""#{t('view.index_task')}" %></h3>-->
+<% else %>
+<!--  <h3><%#= "#{t('view.task_nothing')}" %></h3>-->
+<% end %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>image</th>
+    <th>title</th>
+    <!--      <th colspan="5"></th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= image_tag movie.image.url, :size =>'320x320' %></td>
+      <td><%= movie.title %></td>
+<!--      <td><%# movie.labelings.each do |labeling| %>-->
+          <%#= labeling.label.label_name %>
+<!--        <%# end %></td>-->
+<!--      <td><%#= link_to "#{t('view.show')}", movie, class: "btn btn-primary" %>-->
+        <%#= link_to "#{t('view.edit')}", edit_movie_path(blog),class: "btn btn-success" %>
+<!--        <%#= link_to "#{t('view.destory')}", movie, method: :delete, data: { confirm: "#{t('view.confirm')}" },class: 'btn btn-danger' %></td>-->
+    </tr>
+  <% end %>
+  <%#= paginate @movies %>
+  </tbody>
+</table>
+<!--</div>-->
+
+<br>
+<!--<%#= link_to "#{t('view.task_new')}", new_movie_path,class: 'btn btn-info' %><br>-->
+<!--<%#= link_to "#{t('view.label_new')}", new_label_path,class: 'btn btn-info' %><br>-->
+<!--<%#= link_to "#{t('view.sort')}", movies_path(expired_at: "true"), class: 'btn btn-info' %><br>-->
+<!--<%#= link_to "#{t('view.priority_sort')}", movies_path(priority: "true"), class: 'btn btn-info' %><br>-->
+<%# if params[:q].present?%>
+<!--  <%#= link_to "#{t('view.index_all')}", movies_path, class: 'btn btn-default' %><br>-->
+<%# end %>

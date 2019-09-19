@@ -22,6 +22,8 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
+  # config.time_zone = 'Tokyo'
+  # config.active_record.default_timezone = :local
 
   config.actions do
     dashboard                     # mandatory
