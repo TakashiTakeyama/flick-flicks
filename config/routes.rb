@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'homes#index'
+  resources :reviews
+  # resources :movies
   resources :movies do
-    resources :reviews
+    member do
+      resources :reviews
+    end
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

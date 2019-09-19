@@ -15,3 +15,5 @@
 </p>
 
 <%= link_to "映画一覧へ", movies_path %>
+<%#= link_to "レビュー投稿", new_review_path, movie_id: @movie.id %>
+<%= link_to "review", new_review_path(@movie, @movie.id)%>

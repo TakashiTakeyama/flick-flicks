@@ -6,6 +6,8 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @movie = Movie.find(params[:format])
+    @review.movie_id = @movie.id
   end
 
   def show
@@ -15,8 +17,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.build(review_params)
-    # binding.irb
+    @review.movie_id = @movie.id
     @review.save
     redirect_to movies_path
   end

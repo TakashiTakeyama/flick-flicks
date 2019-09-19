@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
+    <%= image_tag @movie.image.url, :size =>'320x320' %>
+  </div>
+
+  <div class="field">
     <%= form.label :impression %>
     <%= form.text_field :impression %>
+    <%= hidden_field_tag :movie_id, @movie.id %>
   </div>
 
   <%# Label.all.each do |label| %>
