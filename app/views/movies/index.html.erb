@@ -9,23 +9,24 @@
 <table class="table">
   <thead>
   <tr>
-    <th>image</th>
-    <th>title</th>
+<!--    <th>image</th>-->
+<!--    <th>title</th>-->
+<!--    <th>詳細</th>-->
     <!--      <th colspan="5"></th>-->
   </tr>
   </thead>
   <tbody>
   <% @movies.each do |movie| %>
-    <tr>
-      <td><%= image_tag movie.image.url, :size =>'320x320' %></td>
-      <td><%= movie.title %></td>
+<!--    <tr>-->
+      <%= link_to movie_path(movie) do %>
+        <%= image_tag movie.image.url, :size =>'320x320' %>
+      <% end %>
+<!--      <td><%#= image_tag movie.image.url, :size =>'320x320' %></td>-->
+<!--      <td><%#= movie.title %></td>-->
 <!--      <td><%# movie.labelings.each do |labeling| %>-->
           <%#= labeling.label.label_name %>
 <!--        <%# end %></td>-->
-<!--      <td><%#= link_to "#{t('view.show')}", movie, class: "btn btn-primary" %>-->
-        <%#= link_to "#{t('view.edit')}", edit_movie_path(blog),class: "btn btn-success" %>
-<!--        <%#= link_to "#{t('view.destory')}", movie, method: :delete, data: { confirm: "#{t('view.confirm')}" },class: 'btn btn-danger' %></td>-->
-    </tr>
+<!--    </tr>-->
   <% end %>
   <%#= paginate @movies %>
   </tbody>
@@ -33,7 +34,7 @@
 <!--</div>-->
 
 <br>
-<!--<%#= link_to "#{t('view.task_new')}", new_movie_path,class: 'btn btn-info' %><br>-->
+<!--<%#= link_to "詳細へ", edit_movie_path(@movies),class: 'btn btn-info' %><br>-->
 <!--<%#= link_to "#{t('view.label_new')}", new_label_path,class: 'btn btn-info' %><br>-->
 <!--<%#= link_to "#{t('view.sort')}", movies_path(expired_at: "true"), class: 'btn btn-info' %><br>-->
 <!--<%#= link_to "#{t('view.priority_sort')}", movies_path(priority: "true"), class: 'btn btn-info' %><br>-->
