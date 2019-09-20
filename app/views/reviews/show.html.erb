@@ -1,29 +1,40 @@
 <% @review = Review.find(params[:id]) %>
 <% mov = @review.movie %>
 <% @movie = Movie.find(mov.id) %>
-<h3>レビュー詳細</h3>
+<h3>レビュー</h3>
 <p>
-  <strong><%= t('view.name') %></strong>
+  <strong>イメージ</strong>
   <%= image_tag @movie.image.url, :size =>'320x320' %>
 </p>
 
 <p>
-  <strong><%= t('view.details') %></strong>
+  <strong>タイトル</strong>
   <%= @movie.title %>
 </p>
 
 <p>
-  <strong><%= t('view.state') %></strong>
+  <strong>どこで見たの</strong>
   <%= @movie.watched_by %>
 </p>
 
-<% unless @review.user_id == current_user.id %>
-  <% if @favorite_review.present? %>
-    <%= link_to 'お気に入り解除する', favorite_reviews_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorite_reviews_path(review_id: @review.id), method: :post, class: 'btn btn-primary' %>
+<p>
+<strong>コメント</strong>
+  <%= @review.impression %>
+  <% unless @review.user_id == current_user.id %>
+    <% if @favorite.present? %>
+      <%= link_to 'お気に入り解除する', favorite_review_path(id: @review.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'お気に入りする', favorite_reviews_path(review_id: @review.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
-<% end %>
+</p>
+
+<%# @movie.reviews.each do |review| %>
+  <%#= review.user_id %>
+
+  <%#= review.id %>
+<%# end %>
+
 
 <%= link_to "映画一覧へ", movies_path %>
 <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>

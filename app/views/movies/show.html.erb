@@ -14,5 +14,19 @@
   <%= @movie.watched_by %>
 </p>
 
+<p>
+<strong>コメント</strong>
+<%#= @movie.impression %>
+<%# unless @movie.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_movie_path(id: @movie.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorite_movies_path(movie_id: @movie.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<%# end %>
+</p>
+
+
 <%= link_to "映画一覧へ", movies_path %>
+<%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %>
 <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
