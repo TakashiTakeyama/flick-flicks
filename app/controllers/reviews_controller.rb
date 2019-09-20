@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @review = Review.all
   end
 
   def new
@@ -12,6 +13,8 @@ class ReviewsController < ApplicationController
 
   def show
     @favorite = current_user.favorite_reviews.find_by(review_id: params[:id])
+    # binding.pry
+    # @favorite = current_user.favo.ids
   end
 
   def edit
@@ -22,6 +25,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params)
     @review.movie_id = @movie.id
     @review.save
+    # redirect_to reviews_path
     redirect_to review_path(@review)
   end
 

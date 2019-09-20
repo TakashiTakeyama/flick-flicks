@@ -6,5 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :favorite_reviews, dependent: :destroy
-  has_many :favorite_review, through: :favorite_reviews, source: :user
+  has_many :favo, through: :favorite_reviews, source: :review
 end
