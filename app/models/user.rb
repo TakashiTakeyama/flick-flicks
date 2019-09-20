@@ -4,4 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :reviews
+  has_many :favorite_reviews, dependent: :destroy
+  has_many :favorite_review, through: :favorite_reviews, source: :user
 end

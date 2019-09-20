@@ -7,6 +7,7 @@ ja:
       next: "次 &raquo;"
       truncate: "…"
     misc:
+#      filter_date_format: "%Y-%m-%d %H:%M:%S" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
       filter_date_format: "yy/mm/dd" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
       search: "検索"
       filter: "検索"
