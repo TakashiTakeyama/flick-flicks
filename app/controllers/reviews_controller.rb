@@ -20,8 +20,10 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.build(review_params)
     @review.movie_id = @movie.id
-    @review.save
-    redirect_to movies_path
+    if @review.save
+      render :index
+    end
+    # redirect_to movies_path
   end
 
   def update

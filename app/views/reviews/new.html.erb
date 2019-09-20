@@ -1,4 +1,4 @@
-<%= form_with(model:@review, local: true) do |form| %>
+<%= form_with(model:@review) do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "#{t('view.error')}") %></h2>
@@ -20,6 +20,8 @@
     <%= form.text_field :impression %>
     <%= hidden_field_tag :movie_id, @movie.id %>
   </div>
+
+
 
   <%# Label.all.each do |label| %>
     <%# if  label.user_id.nil? %>
