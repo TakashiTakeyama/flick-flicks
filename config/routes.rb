@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'favorite_reviews/create'
-  get 'favorite_reviews/destroy'
   root 'homes#index'
   resources :reviews
   resources :favorite_reviews, only: [:create, :destroy]
+  resources :favorite_movies, only: [:create, :destroy]
   # resources :movies
   resources :movies do
     member do
