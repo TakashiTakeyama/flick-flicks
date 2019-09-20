@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorite_reviews.find_by(review_id: params[:id])
   end
 
   def edit
@@ -20,10 +21,8 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.build(review_params)
     @review.movie_id = @movie.id
-    if @review.save
-      render :index
-    end
-    # redirect_to movies_path
+    @review.save
+    redirect_to review_path(@review)
   end
 
   def update

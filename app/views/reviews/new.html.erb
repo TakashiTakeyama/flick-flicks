@@ -1,4 +1,4 @@
-<%= form_with(model:@review) do |form| %>
+<%= form_with(model:@review,local: true) do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "#{t('view.error')}") %></h2>
@@ -40,7 +40,7 @@
   </div>
 <% end %>
 
-<%= link_to "戻る", movies_path %>
+<%= link_to "一覧へ", movies_path %>
 
 <%# Label.all.each do |label| %>
 <%#= form.check_box :label_ids, { multiple: true, checked: @task.labels.find_by(id: label.id).present?, include_hidden: false }, label[:id] %>
