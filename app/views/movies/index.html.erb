@@ -1,41 +1,22 @@
-<% if @movies.find_by(params[:user_id]).present? %>
-<!--  <h3><%#= "#{@movies.find_by(params[:user_id]).user.name}""#{t('view.index_task')}" %></h3>-->
-<% else %>
-<!--  <h3><%#= "#{t('view.task_nothing')}" %></h3>-->
-<% end %>
+<%# if @movies.find_by(params[:user_id]).present? %>
+<%# else %>
+<%# end %>
 
 <table class="table">
   <thead>
   <tr>
-<!--    <th>image</th>-->
-<!--    <th>title</th>-->
-<!--    <th>詳細</th>-->
     <!--      <th colspan="5"></th>-->
+    <th></th>
   </tr>
   </thead>
   <tbody>
   <% @movies.each do |movie| %>
-<!--    <tr>-->
-      <%= link_to movie_path(movie) do %>
+      <%= link_to reviews_path(movie, movie.id) do %>
         <%= image_tag movie.image.url, :size =>'320x320' %>
+      <%#= render 'follow_form', movie: movie  %>
       <% end %>
-<!--      <td><%#= image_tag movie.image.url, :size =>'320x320' %></td>-->
-<!--      <td><%#= movie.title %></td>-->
-<!--      <td><%# movie.labelings.each do |labeling| %>-->
-          <%#= labeling.label.label_name %>
-<!--        <%# end %></td>-->
-<!--    </tr>-->
   <% end %>
   <%#= paginate @movies %>
   </tbody>
 </table>
-<!--</div>-->
 
-<br>
-<!--<%#= link_to "詳細へ", edit_movie_path(@movies),class: 'btn btn-info' %><br>-->
-<!--<%#= link_to "#{t('view.label_new')}", new_label_path,class: 'btn btn-info' %><br>-->
-<!--<%#= link_to "#{t('view.sort')}", movies_path(expired_at: "true"), class: 'btn btn-info' %><br>-->
-<!--<%#= link_to "#{t('view.priority_sort')}", movies_path(priority: "true"), class: 'btn btn-info' %><br>-->
-<%# if params[:q].present?%>
-<!--  <%#= link_to "#{t('view.index_all')}", movies_path, class: 'btn btn-default' %><br>-->
-<%# end %>

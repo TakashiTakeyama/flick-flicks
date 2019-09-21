@@ -1,0 +1,32 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <% @youtube_data.items.each do |item| %>
+        <% snippet = item.snippet %>
+        <!--  <b><%#= snippet.title %></b>-->
+        <!--  <p><%#= snippet.published_at %><%= snippet.channel_title %></p>-->
+        <a><iframe width="33%" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
+      <% end %>
+    </div>
+    <div class="swiper-slide">
+      <% @youtube_datas.items.each do |item| %>
+        <% snippet = item.snippet %>
+        <!--  <b><%#= snippet.title %></b>-->
+        <!--  <p><%#= snippet.published_at %><%= snippet.channel_title %></p>-->
+        <a><iframe width="33%" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
+      <% end %>
+    </div>
+    <div class="swiper-slide">
+      <% @youtube_datass.items.each do |item| %>
+        <% snippet = item.snippet %>
+        <!--<b><%#= snippet.title %></b>-->
+        <!--  <p><%#= snippet.published_at %><%= snippet.channel_title %></p>-->
+        <a><iframe width="33%" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
+      <% end %>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
