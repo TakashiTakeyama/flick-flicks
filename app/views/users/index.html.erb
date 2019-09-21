@@ -1,0 +1,18 @@
+<h3>ユーザー一覧</h3>
+<% @users.each do |user| %>
+  <p>
+    <strong>アイコン</strong>
+    <%= link_to users_path do %>
+      <%= image_tag user.icon.url, :size =>'320x320' %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>ニックネーム</strong>
+    <%= user.nick_name %>
+  </p>
+
+<%= render 'follow_form', user: user %>
+<% end %>
+<%= link_to "映画一覧へ", movies_path %>
+<%#= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
