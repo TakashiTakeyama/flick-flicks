@@ -26,10 +26,19 @@
     <%= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
   </div>
 
+  <% Category.all.each do |cat| %>
+    <%# if  cat.user_id.nil? %>
+      <%= form.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+      <label><%= cat.name %></label>
+    <%# end %>
 
+    <%# if cat.user_id == current_user.id %>
+      <%#= form.check_box :cat_ids, { multipie: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+<!--      <label><%#= cat.name %></label>-->
+    <%# end %>
+  <% end %>
 
-  <%# Label.all.each do |label| %>
-    <%# if  label.user_id.nil? %>
+  <%# if  cat.user_id.nil? %>
       <%#= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
 <!--      <label><%#= label.label_name %></label>-->
     <%# end %>

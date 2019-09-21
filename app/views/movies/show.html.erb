@@ -14,8 +14,14 @@
   <%= @movie.watched_by %>
 </p>
 
+
+<p><% @movie.categories.each do |cat| %>
+    <%= cat.name %>
+    <% end %>
+</p>
+
 <p>
-<strong>コメント</strong>
+  <strong>コメント</strong>
 <%#= @movie.impression %>
 <%# unless @movie.user_id == current_user.id %>
   <% if @favorite.present? %>

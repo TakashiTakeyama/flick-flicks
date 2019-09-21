@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    # @movie.movie_categories.build
     @movie.save
     redirect_to movies_path
   end
@@ -33,6 +34,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :image, :watched_by)
+    params.require(:movie).permit(:title, :image, :watched_by, category_ids: [])
   end
 end
