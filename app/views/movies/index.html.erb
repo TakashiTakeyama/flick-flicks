@@ -1,6 +1,9 @@
-<%# if @movies.find_by(params[:user_id]).present? %>
-<%# else %>
-<%# end %>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title, "タイトル" %>
+  <%= f.search_field :title_cont %>
+
+  <%= f.submit "検索" %>
+<% end %>
 
 <table class="table">
   <thead>
