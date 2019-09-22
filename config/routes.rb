@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'ranking/index'
   get 'flicks/index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
