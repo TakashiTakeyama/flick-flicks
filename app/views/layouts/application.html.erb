@@ -16,13 +16,15 @@
       <%= link_to "映画一覧", movies_path %>
       <%= link_to "ユーザー一覧", users_path %>
       <%= link_to "カテゴリー作成", new_category_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to "flicks", flicks_index_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "管理画面へ", rails_admin_path %>
     <% elsif user_signed_in? %>
       <%= link_to "映画投稿", new_movie_path %>
       <%= link_to "映画一覧", movies_path %>
       <%= link_to "ユーザー一覧", users_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to "flicks", flicks_index_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "ユーザー詳細", edit_user_registration_path %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
