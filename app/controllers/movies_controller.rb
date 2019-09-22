@@ -1,10 +1,12 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!
+    PER = 8
 
   def index
     @q = Movie.ransack(params[:q])
     @movies = @q.result(distinct: true)
-    # @movies = Movie.all
+    @movies.page(params[:page]).per(PER)
+    @movies = Movie.all.page(params[:page]).per(PER)
   end
 
   def new
