@@ -1,0 +1,13 @@
+<div id="follow_form_<%= movie.id %>">
+  <% unless current_user.following?(movie) %>
+    <%= form_with(model: current_user.favorite_movies.build(movie_id: params[:movie_id])) do |f| %>
+    <%#= form_with(model: current_user.active_relationships.build(followed_id: movie.id)) do |f| %>
+      <%= f.hidden_field :movie_id %>
+      <%= f.submit "like it" %>
+    <% end %>
+  <% else %>
+    <%= form_with(model: current_user.active_relationships.find_by(followed_id: movie.id), method: :delete ) do |f| %>
+      <%= f.submit "shit" %>
+    <% end %>
+  <% end %>
+</div>

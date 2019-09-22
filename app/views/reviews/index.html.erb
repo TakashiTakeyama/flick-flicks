@@ -17,7 +17,7 @@
   <%= @movie.watched_by %>
 </p>
 
-<% @review.each do |review| %>
+<% @movie.reviews.each do |review| %>
   <p>
     <%= link_to review_path(review) do %>
       <%= review.impression %>
