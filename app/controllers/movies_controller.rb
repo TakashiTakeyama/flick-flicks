@@ -4,9 +4,11 @@ class MoviesController < ApplicationController
 
   def index
     @q = Movie.ransack(params[:q])
-    @movies = @q.result(distinct: true)
-    @movies.page(params[:page]).per(PER)
-    @movies = Movie.all.page(params[:page]).per(PER)
+    if params[:q].present?
+      @movies = @q.result(distinct: true).page(params[:page]).per(PER)
+    else
+      @movies = Movie.all.page(params[:page]).per(PER)
+    end
   end
 
   def new
