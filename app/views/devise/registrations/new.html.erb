@@ -1,44 +1,51 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :nick_name %><br />
-    <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :icon %>
-    <%= f.file_field :icon%>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<airticle class="card-body mx-auto">
+  <h4 class="card-title mt-3 text-center">新規登録</h4>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+<!--    <p class="divider-text">-->
+<!--      <span class="bg-white">または</span>-->
+<!--    </p>-->
+    <div class="form-group input-group mx-auto">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"ユーザーネーム" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.text_field :nick_name, autofocus: true, autocomplete: "email", placeholder:"ニックネーム" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.label :アバター %>
+      <%= f.file_field :icon%>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%#= f.label :password %>
+      <% if @minimum_password_length %>
+  <!--    <em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+  <!--    <%#= f.label :password_confirmation %><br />-->
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワードの確認" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block"%>
+    </div>
+  <% end %>
+  <p class="text-center">アカウントをお持ちですか？<%= link_to "ログインする", user_session_path %></p>
+<!--    <p class="mt-5 mb-3 text-muted">&copy; 2019</p>-->
+  <%#= render "devise/shared/links" %>
+</airticle>

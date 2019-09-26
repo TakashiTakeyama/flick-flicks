@@ -1,15 +1,35 @@
-<h3>ユーザー一覧</h3>
-<% @users.each do |user| %>
-  <p>
-    <strong>アイコン</strong>
-    <%= link_to users_path do %>
-      <%= image_tag user.icon.url, :size =>'320x320' %>
-    <% end %>
-    <strong>ニックネーム</strong>
-    <%= user.nick_name %>
-  </p>
-<%= render 'follow_form', user: user %>
+<!--<h3>ユーザー一覧</h3>-->
+<%# @users.each do |user| %>
+<!--  <p>-->
+<!--    <strong>アイコン</strong>-->
+    <%#= link_to users_path do %>
+      <%#= image_tag user.icon.url, :size =>'320x320' %>
+    <%# end %>
+<!--    <strong>ニックネーム</strong>-->
+    <%#= user.nick_name %>
+<!--  </p>-->
 
-<% end %>
-<%= link_to "映画一覧へ", movies_path %>
+<%# end %>
+<%#= link_to "映画一覧へ", movies_path %>
 <%#= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+
+
+<div class="user-top"><p>users</p></div>
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <%= link_to image_tag(user.icon.url, class: "card-img-top" ), users_path %>
+        <div class="card-body">
+          <p class="card-text"><%= user.name %></p>
+          <%= render 'follow_form', user: user %>
+          <div class="d-flex justify-content-between align-items-center">
+            <!--              <small class="text-muted"><%#= Date.parse(user.date.to_s).strftime("%Y年%m月%d日") %></small>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<!--<div><%#= paginate @users, window: 2 %></div>-->
+</div>

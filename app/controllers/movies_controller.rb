@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!
-    PER = 8
+    PER = 9
 
   def index
     @q = Movie.ransack(params[:q])
