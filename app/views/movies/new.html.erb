@@ -1,57 +1,69 @@
-<%= form_with(model:@movie, local: true) do |form| %>
-  <% if @movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@movie.errors.count, "#{t('view.error')}") %></h2>
+<%#= form_with(model:@movie, local: true) do |form| %>
+  <%# if @movie.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(@movie.errors.count, "#{t('view.error')}") %></h2>-->
+<!--      <ul>-->
+        <%# @movie.errors.full_messages.each do |message| %>
+<!--          <li><%#= message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+<!--  <div class="field">-->
+    <%#= form.label :title %>
+    <%#= form.text_field :title %>
+<!--  </div>-->
+<!--  <div class="field">-->
+    <%#= form.label :image %>
+    <%#= form.file_field :image %>
+<!--  </div>-->
+<!--  <div class="field">-->
+    <%#= form.label :watched_by %>
+    <%#= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
+<!--  </div>-->
+  <%# Category.all.each do |cat| %>
+      <%#= form.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+<!--      <label><%#= cat.name %></label>-->
+  <%# end %>
+<!--  <div class="actions">-->
+    <%#= form.submit %>
+<!--  </div>-->
+<%# end %>
+<%#= link_to "一覧へ", movies_path %>
 
-      <ul>
-        <% @movie.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<airticle class="card-body mx-auto">
+  <h4 class="card-title mt-3 text-center">映画登録</h4>
+    <%= form_with(model: @movie, local:true) do |f| %>
+    <%= render "movies/shered/error_messages", movie: @movie %>
+    <div class="form-group input-group mx-auto">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"タイトル" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.label :イメージ %>
+      <%= f.file_field :image, autofocus: true, autocomplete: "image", placeholder:"email" %>
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+      </div>
+      <%= f.select :watched_by, Movie.watched_bies.keys.to_a, autofocus: true, autocomplete: "watched_by", placeholder:"ニックネーム" %>
+    </div>
+    <div class="form-group input-group">
+    <div class="form-group">
+    </div>
+    <div class="form-group input-group mx-auto">
+      <% Category.all.each do |cat| %>
+      <%= f.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+      <label><%= cat.name %></label>
+      <% end %>
+    </div>
+      <%= f.submit "登録する", class: "btn btn-lg btn-primary btn-block"%>
     </div>
   <% end %>
+  <%= link_to "一覧へ", movies_path %>
+</airticle>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :watched_by %>
-    <%= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
-  </div>
-
-  <% Category.all.each do |cat| %>
-    <%# if  cat.user_id.nil? %>
-      <%= form.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
-      <label><%= cat.name %></label>
-    <%# end %>
-
-    <%# if cat.user_id == current_user.id %>
-      <%#= form.check_box :cat_ids, { multipie: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
-<!--      <label><%#= cat.name %></label>-->
-    <%# end %>
-  <% end %>
-
-  <%# if  cat.user_id.nil? %>
-      <%#= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
-<!--      <label><%#= label.label_name %></label>-->
-    <%# end %>
-
-    <%# if label.user_id == current_user.id %>
-      <%#= form.check_box :label_ids, { multipie: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
-<!--      <label><%#= label.label_name %></label>-->
-    <%# end %>
-  <%# end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to "一覧へ", movies_path %>

@@ -1,29 +1,22 @@
 <h3>映画詳細</h3>
+  <p>
+    <strong></strong>
+    <%= image_tag @movie.image.url, :size =>'320x320' %>
+  </p>
+  <p>
+    <strong></strong>
+    <%= @movie.title %>
+  </p>
+  <p>
+    <strong></strong>
+    <%= @movie.watched_by %>
+  </p>
+  <p><% @movie.categories.each do |cat| %>
+      <%= cat.name %>
+      <% end %>
+  </p>
 <p>
-  <strong><%= t('view.name') %></strong>
-  <%= image_tag @movie.image.url, :size =>'320x320' %>
-</p>
-
-<p>
-  <strong><%= t('view.details') %></strong>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <strong><%= t('view.state') %></strong>
-  <%= @movie.watched_by %>
-</p>
-
-
-<p><% @movie.categories.each do |cat| %>
-    <%= cat.name %>
-    <% end %>
-</p>
-
-<p>
-  <strong>コメント</strong>
-<%#= @movie.impression %>
-<%# unless @movie.user_id == current_user.id %>
+  <strong></strong>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_movie_path(id: @movie.id), method: :delete, class: 'btn btn-danger' %>
   <% else %>
@@ -31,8 +24,7 @@
   <% end %>
 <%# end %>
 </p>
-
-
-<%= link_to "映画一覧へ", movies_path %>
-<%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %>
+<%= link_to "映画一覧へ", movies_path %></br>
+<%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
 <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+

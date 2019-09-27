@@ -73,3 +73,5 @@ gem 'google-api-client', '0.9.20', require: 'google/apis/youtube_v3'
 gem 'mechanize'
 gem 'ransack'
 gem 'kaminari'
+gem 'bootstrap', '~> 4.3.1'
+gem "font-awesome-rails"
