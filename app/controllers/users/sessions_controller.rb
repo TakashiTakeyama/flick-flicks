@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  before_action :authenticate_user!
+
+  def my_page
+  end
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    movies_path
+  end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -9,7 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
+  # def createuuuuuuuuuuuu
   #   super
   # end
 
