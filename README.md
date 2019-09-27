@@ -33,7 +33,7 @@ Rails 5.2.3
 - ユーザー削除機能
 - ユーザーに対してのフォロー、フォロワー機能  
  
-- 映画ランキング一覧表示機能
+- 映画ランキング表示機能
 - 映画一覧表示機能に対してのページネーション機能
 - 映画投稿機能
 - 映画編集機能
@@ -66,3 +66,4 @@ gem 'kaminari'
 gem 'google-api-client'  
 gem 'ransack'  
 gem 'carrierwave'
+gem 'font-awesome-rails'

@@ -7,11 +7,13 @@
 <!--    </p>-->
     <div class="form-group input-group mx-auto">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("user lg") %></span>
       </div>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"ユーザーネーム" %>
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("envelope") %></span>
       </div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"email" %>
     </div>
@@ -28,6 +30,7 @@
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("lock lg") %></span>
       </div>
       <%#= f.label :password %>
       <% if @minimum_password_length %>
@@ -37,6 +40,7 @@
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("lock lg") %></span>
       </div>
   <!--    <%#= f.label :password_confirmation %><br />-->
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワードの確認" %>
