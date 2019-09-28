@@ -1,4 +1,8 @@
 class Movie < ApplicationRecord
+  validates :title, presence: true,
+            uniqueness: true,
+            length: { maximum: 30 }
+  validates :image, presence: true
   mount_uploader :image, ImageUploader
 
   enum watched_by: [:watched_by, :Amazon_Prime, :NetFlix, :映画館, :レンタル]
