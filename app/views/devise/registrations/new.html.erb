@@ -19,11 +19,13 @@
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("check") %></span>
       </div>
       <%= f.text_field :nick_name, autofocus: true, autocomplete: "email", placeholder:"ニックネーム" %>
     </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
+        <span class="input-group-text"><%= fa_icon("user-circle") %></span>
       </div>
       <%= f.label :アバター %>
       <%= f.file_field :icon%>

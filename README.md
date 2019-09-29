@@ -59,11 +59,11 @@ https://xd.adobe.com/view/e637e179-6254-4b02-67ed-ce171fc23bbf-9006/screen/42403
 
 ## 使用予定Gem
 gem 'devise'  
-gem 'rails_admin'
-gem 'cancancan'
+gem 'rails_admin'  
+gem 'cancancan'  
 gem 'omniauth'  
 gem 'kaminari'  
 gem 'google-api-client'  
 gem 'ransack'  
-gem 'carrierwave'
+gem 'carrierwave'  
 gem 'font-awesome-rails'
