@@ -22,7 +22,8 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  font-family: sans-serif;
+  //font-family: sans-serif;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 h1 {
@@ -46,15 +47,17 @@ p {
 }
 
 a {
-  font-family: sans-serif;
+  //font-family: sans-serif;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 /* navbar */
 
 .navbar {
-  background-color: #55CC6D;
+  //background-color: #55CC6D;
+  color: white;
   a {
-    color: black;
+    color: white;
     text-decoration: none;
   }
 }
@@ -64,11 +67,11 @@ a {
   margin-bottom: -60px;
   background-color: transparent;
   a {
-    color: #A9B34D;
+    color: white;
     text-decoration: none;
   }
   .dropdown-menu a {
-    color: #A9B34D;
+    color: white;
   }
 }
 
@@ -77,12 +80,13 @@ a {
     margin-bottom: 0px;
     background-color: indianred;
     a {
-      color: white;
+      color: black;
       text-decoration: none;
     }
   }
   .navbar-nav {
     padding-top: -15px;
+    color: white;
   }
   .border-line {
     border-bottom: 1.2px solid white;
@@ -105,7 +109,7 @@ a {
 /* home */
 
 .jumbotron {
-  background-image: url("https://cdn.pixabay.com/photo/2019/09/22/05/26/hobbit-4495138_1280.jpg");
+  background-image: url("https://pixabay.com/get/55e3d646435bb108feda8460825668204022dfe05558794b732a7cdd/chicago-333599_1920.jpg");
   background-size: cover;
   background-position: center 60%;
   overflow: hidden;
@@ -140,9 +144,10 @@ a {
 }
 
 .jumbotron-heading {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  //font-family: 'Oswald', sans-serif;
   //font-family: 'Lobster', cursive;
-  color: black;
+  color: white;
   font-size: 5em;
   margin: 0px;
 }
