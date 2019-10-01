@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -57,8 +57,13 @@ a {
   //background-color: #55CC6D;
   color: white;
   a {
+    margin-bottom: 0;
     color: white;
     text-decoration: none;
+    font-size: 2rem;
+    }
+    a:hover {
+      color: orange;
   }
 }
 
@@ -168,8 +173,8 @@ a {
 .card-log {
   //width: 300px;
   background: linear-gradient(-135deg, #E4A972, #9941D8);
-  padding-top: 50px;
-  height: 800px;
+  padding-top: 250px;
+  height: 100vh;
 }
 
 @media screen and (max-width: 425px) {
