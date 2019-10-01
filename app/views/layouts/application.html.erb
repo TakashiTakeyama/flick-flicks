@@ -5,16 +5,14 @@
     <%#= favicon_link_tag('favicon.ico') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
   </head>
   <nav class="navbar navbar-expand-lg fixed-top ">
-    <span class="navbar-brand mb-0 h1">
+    <a class="navbar-brand h1"><%= link_to "Flick Flicks", root_path %></a>
 <!--      <img src="assets/images/f_f_event_30_svg_f_event_30_0bg.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
-        flickflicks
-    </span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,9 +35,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-menu"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-menu"><%= link_to "管理画面", rails_admin_path, class: "nav-link" %></a>
+            <a class="dropdown-menu"><%= link_to "admin", rails_admin_path, class: "nav-link" %></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-menu"><%= link_to "カテゴリー作成", new_category_path, class: "nav-link" %></a>
+            <a class="dropdown-menu"><%= link_to "category", new_category_path, class: "nav-link" %></a>
           </div>
         </li>
         <% elsif user_signed_in? %>
@@ -58,8 +56,8 @@
           </li>
       </ul>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>
+          <%= link_to "LogIn", new_user_session_path, class: "nav-link" %>
         <% end %>
 <!--      <form class="form-inline my-2 my-lg-0">-->
 <!--        <input class="form-control mr-sm-2" type="search" placeholder="タイトル" aria-label="Search">-->
@@ -68,7 +66,8 @@
     </div>
   </nav>
   <body>
-    <%= yield %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+  <%= yield %>
   </body>
   <footer class="page-footer font-small special-color-dark pt-4">
     <!-- Footer Elements -->
