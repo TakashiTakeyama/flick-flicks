@@ -1,7 +1,15 @@
-<p>
+<body>
+  <div class="void">&emsp;</div>
   <% @a.each_with_index do |title, i| %>
+  <p>
     <%= "今週の#{(i + 1)}位" %>
     <%= title %>
-    </p>
+  </p>
   <% end %>
+</body>
 
+<style>
+  .void {
+    margin-top: 2rem;
+  }
+</style>

@@ -75,6 +75,13 @@ a {
   }
 }
 
+.dropdown-menu {
+  color: black;
+  a {
+    color: black;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .navbar-custom {
     margin-bottom: 0px;
@@ -109,7 +116,7 @@ a {
 /* home */
 
 .jumbotron {
-  background-image: url("https://pixabay.com/get/55e3d646435bb108feda8460825668204022dfe05558794b732a7cdd/chicago-333599_1920.jpg");
+  background-image: url("top_page.jpg");
   background-size: cover;
   background-position: center 60%;
   overflow: hidden;
@@ -152,6 +159,11 @@ a {
   margin: 0px;
 }
 
+.card {
+  //width: 300px;
+  height: 1475px;
+  background-image: url("sign_up.jpg");
+}
 @media screen and (max-width: 425px) {
   .jumbotron-heading {
     color: white;
@@ -193,6 +205,10 @@ a {
 .card-body {
   max-width: 400px;
   padding: 60px 20px;
+}
+
+.card-title {
+  color: white;
 }
 .divider-text {
   position: relative;
