@@ -1,34 +1,36 @@
-<h3>映画詳細</h3>
+<div class="card-log">
+  <h3>映画詳細</h3>
+    <p>
+      <strong></strong>
+      <%= image_tag @movie.image.url, :size =>'320x320' %>
+    </p>
+    <p>
+      <strong></strong>
+      <%= @movie.title %>
+    </p>
+    <p>
+      <strong></strong>
+      <%= @movie.watched_by %>
+    </p>
+    <p><% @movie.categories.each do |cat| %>
+        <%= cat.name %>
+        <% end %>
+    </p>
   <p>
     <strong></strong>
-    <%= image_tag @movie.image.url, :size =>'320x320' %>
-  </p>
-  <p>
-    <strong></strong>
-    <%= @movie.title %>
-  </p>
-  <p>
-    <strong></strong>
-    <%= @movie.watched_by %>
-  </p>
-  <p><% @movie.categories.each do |cat| %>
-      <%= cat.name %>
+    <% if @favorite.present? %>
+      <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
+        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
       <% end %>
+    <% else %>
+      <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  <%# end %>
   </p>
-<p>
-  <strong></strong>
-  <% if @favorite.present? %>
-    <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
-      <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-    <% end %>
-  <% else %>
-    <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
-      <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-    <% end %>
-  <% end %>
-<%# end %>
-</p>
-<%= link_to "映画一覧へ", movies_path %></br>
-<%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
-<%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+  <%= link_to "映画一覧へ", movies_path %></br>
+  <%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
+  <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+</div>
 

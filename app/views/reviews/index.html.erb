@@ -1,4 +1,4 @@
-<div class="container col-lg-6"%>
+<div class="container col-lg-6" % xmlns="http://www.w3.org/1999/html">
 <!--  <div class="iframe-wrap">-->
 <!--    <div class="embed-responsive embed-responsive-16by9">-->
 <!--      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%#= @video.url %>" allowfullscreen></iframe>-->
@@ -7,34 +7,23 @@
 <!--    <div class="review-button"><%#= link_to 'レビューを書く', new_video_review_path(@video), class:"btn btn-warning" %></div>-->
 <!--    <p>動画公開日：<%#= Date.parse(@video.date.to_s).strftime("%Y年%m月%d日") %></p>-->
 <!--  </div>-->
-  <h2>レビュー</h2>
-  <% @movie = Movie.find(params[:format]) %>
-  <p>
+  <div class="container" %>
+    <h2>Review</h2>
+    <% @movie = Movie.find(params[:format]) %>
+    <div class="video-info justify-content-center d-flex">
     <%= image_tag @movie.image.url, :size =>'320x320' %>
-  </p>
-    <h2>
-      <%= @movie.title %>
-    </h2>
-  </p>
-  <p>
-    <%= @movie.watched_by %>
-  </p>
-
-<%# unless @review.user_id == current_user.id %>
-  <%# if @favorite_review.present? %>
-    <%#= link_to 'お気に入り解除する', favorite_reviews_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-  <%# else %>
-    <%#= link_to 'お気に入りする', favorite_reviews_path(review_id: @review.id), method: :post, class: 'btn btn-primary' %>
-  <%# end %>
-<%# end %>
+    </div>
+    <div class="review-button justify-content-center d-flex"><%= link_to 'レビューを書く', new_review_path(@movie, @movie.id), class:"btn btn-warning" %>
+    </div></br>
+    <h2><strong>Title&nbsp;&nbsp;</strong><%= @movie.title %></h2>
 
   <% @movie.reviews.each do |review| %>
     <div class="reviews">
       <div class="row blockquote review-item">
         <div class="col-md-3 text-center">
           <%= link_to review_path(review) do %>
-            <%= review.impression %>
-            <%= image_tag review.user.icon.url, :size =>'80x80' %>
+            <%= image_tag review.user.icon.url, :size =>'80x80' %><br>
+            <%= @movie.title %>
             <%#= holder_tag '80x80', 'アイコン' unless review.user.image.attached? %>
           <% end %>
           <div class="caption">
@@ -42,8 +31,8 @@
           </div>
         </div>
         <div class="col-md-9">
-<!--          <h3><%#= link_to review.title, video_review_path(@video, review) %></h3>-->
-          <%#= simple_format(review.content.truncate(100)) %>
+          <%= review.impression %><br>
+          <%= @movie.watched_by + "#{'で見られるよ!'}"%><br>
           <small class="review-date"><%= Date.parse(review.created_at.to_s).strftime("%Y年%m月%d日") %></small>
         </div>
       </div>
@@ -52,4 +41,21 @@
   <% end %>
   <%= link_to "映画一覧へ", movies_path %></br>
 <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+</div>
+
+<!--<div class="card" style="width: 18rem;">-->
+<!--  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>-->
+<!--  <div class="card-body">-->
+  <%# @movie.reviews.each do |review| %>
+      <%#= link_to review_path(review) do %>
+        <%#= review.impression %>
+        <%#= image_tag review.user.icon.url, :size =>'80x80' %>
+        <%#= holder_tag '80x80', 'アイコン' unless review.user.image.attached? %>
+        <%# end %>
+    <%# end %>
+<!--    <h5 class="card-title">Card title</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--  </div>-->
+<!--</div>-->
 </div>

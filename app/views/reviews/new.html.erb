@@ -1,48 +1,29 @@
-<%= form_with(model:@review,local: true) do |form| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "#{t('view.error')}") %></h2>
-
-      <ul>
-        <% @review.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= image_tag @movie.image.url, :size =>'320x320' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :impression %>
-    <%= form.text_field :impression %>
-    <%= hidden_field_tag :movie_id, @movie.id %>
-  </div>
-
-
-
-  <%# Label.all.each do |label| %>
-    <%# if  label.user_id.nil? %>
-      <%#= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
-<!--      <label><%#= label.label_name %></label>-->
-    <%# end %>
-
-    <%# if label.user_id == current_user.id %>
-      <%#= form.check_box :label_ids, { multipie: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false }, label[:id] %>
-<!--      <label><%#= label.label_name %></label>-->
-    <%# end %>
-  <%# end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to "一覧へ", movies_path %>
-
-<%# Label.all.each do |label| %>
-<%#= form.check_box :label_ids, { multiple: true, checked: @task.labels.find_by(id: label.id).present?, include_hidden: false }, label[:id] %>
-<!--  <label class='badge badge-secondary'><%#= label.name %></label>-->
-<%# end %>
+<div class="card-log">
+ <div class="card-body mx-auto text-center">
+   <h1 class="card-title text-center"></h1>
+    <%= form_with(model:@review,local: true) do |form| %>
+      <% if @review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@review.errors.count, "#{t('view.error')}") %></h2>
+          <ul>
+            <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= image_tag @movie.image.url, :size =>'320x320' %>
+      </div><br>
+      <div class="field text-center">
+        <%#= form.label :impression %>
+        <%= form.text_area :impression, :size => '40x5' %>
+        <%= hidden_field_tag :movie_id, @movie.id %>
+      </div><br>
+      <div class="actions text-center">
+        <%= form.submit('送信',class: 'btn btn-info') %>
+      </div>
+    <% end %>
+ </div>
+</div>
+<%#= link_to "一覧へ", movies_path %>

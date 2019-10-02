@@ -36,5 +36,6 @@
 <%# end %>
 
 
-<%= link_to "映画一覧へ", movies_path %>
+<%= link_to "映画一覧へ", movies_path %></br>
+<%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
 <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
