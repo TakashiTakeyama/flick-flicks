@@ -1,23 +1,22 @@
-<div class="card-log">
-  <h3>映画詳細</h3>
-    <p>
-      <strong></strong>
-      <%= image_tag @movie.image.url, :size =>'320x320' %>
-    </p>
-    <p>
-      <strong></strong>
+<div class="text-center" style="margin-top: 100px">
+  <strong></strong>
+  <%= image_tag @movie.image.url, :size =>'320x320' %>
+</div>>
+<div class="card mx-auto text-center" style="width: 18rem;">
+  <div class="card-body text-center">
+    <h5 class="card-title">映画情報</h5>
+      <h4 class="card-subtitle mb-2 text-muted">
       <%= @movie.title %>
-    </p>
-    <p>
-      <strong></strong>
-      <%= @movie.watched_by %>
-    </p>
+        </h4>
     <p><% @movie.categories.each do |cat| %>
         <%= cat.name %>
         <% end %>
     </p>
-  <p>
-    <strong></strong>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= link_to "post-review", new_review_path(@movie, @movie.id)%></br>
+    <%= link_to "reviews", reviews_path(@movie, @movie.id) %></br>
+    <%= link_to "movies", movies_path %></br>
+    <p>
     <% if @favorite.present? %>
       <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -29,8 +28,6 @@
     <% end %>
   <%# end %>
   </p>
-  <%= link_to "映画一覧へ", movies_path %></br>
-  <%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
-  <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+  </div>
 </div>
 

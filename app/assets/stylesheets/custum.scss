@@ -22,7 +22,6 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  //font-family: sans-serif;
   font-family: 'Alegreya Sans SC', sans-serif;
 }
 
@@ -54,7 +53,7 @@ a {
 /* navbar */
 
 .navbar {
-  //background-color: #55CC6D;
+  background-color: black;
   color: white;
   a {
     margin-bottom: 0;
@@ -159,8 +158,12 @@ a {
   font-family: 'Alegreya Sans SC', sans-serif;
   //font-family: 'Oswald', sans-serif;
   //font-family: 'Lobster', cursive;
-  color: white;
-  font-size: 5em;
+  //color: #fff;
+  text-stroke: 5px black;
+  -webkit-text-stroke: 3px black;
+  text-shadow: 0px 0px 20px rgba(255,255,0,1);
+  color: #FFAA3F;
+  font-size: 7em;
   margin: 0px;
 }
 
