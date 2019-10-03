@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
   </head>
-  <nav class="navbar navbar-expand-lg fixed-top ">
-    <a class="navbar-brand h1"><%= link_to "Flick Flicks", root_path %></a>
+  <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand h1">
+      <% if user_signed_in? %>
+        <%= link_to "Flick Flicks", movies_path %></a>
+      <% else %>
+        <%= link_to "Flick Flicks", root_path %></a>
+      <% end %>
 <!--      <img src="assets/images/f_f_event_30_svg_f_event_30_0bg.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

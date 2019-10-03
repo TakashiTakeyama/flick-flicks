@@ -26,10 +26,11 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    # @movie.movie_categories.build
-    # binding.pry
-    @movie.save
-    redirect_to movies_path
+    if @movie.save
+      redirect_to movies_path
+    else
+      render 'new'
+    end
   end
 
   def update

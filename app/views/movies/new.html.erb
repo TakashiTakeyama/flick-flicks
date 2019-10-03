@@ -1,73 +1,42 @@
-<%#= form_with(model:@movie, local: true) do |form| %>
-  <%# if @movie.errors.any? %>
-<!--    <div id="error_explanation">-->
-<!--      <h2><%#= pluralize(@movie.errors.count, "#{t('view.error')}") %></h2>-->
-<!--      <ul>-->
-        <%# @movie.errors.full_messages.each do |message| %>
-<!--          <li><%#= message %></li>-->
-        <%# end %>
-<!--      </ul>-->
-<!--    </div>-->
-  <%# end %>
-<!--  <div class="field">-->
-    <%#= form.label :title %>
-    <%#= form.text_field :title %>
-<!--  </div>-->
-<!--  <div class="field">-->
-    <%#= form.label :image %>
-    <%#= form.file_field :image %>
-<!--  </div>-->
-<!--  <div class="field">-->
-    <%#= form.label :watched_by %>
-    <%#= form.select :watched_by, Movie.watched_bies.keys.to_a, {} %>
-<!--  </div>-->
-  <%# Category.all.each do |cat| %>
-      <%#= form.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
-<!--      <label><%#= cat.name %></label>-->
-  <%# end %>
-<!--  <div class="actions">-->
-    <%#= form.submit %>
-<!--  </div>-->
-<%# end %>
-<%#= link_to "一覧へ", movies_path %>
-
-<airticle class="card-body mx-auto">
-  <h4 class="card-title mt-3 text-center">映画登録</h4>
-    <%= form_with(model: @movie, local:true) do |f| %>
-    <%= render "movies/shered/error_messages", movie: @movie %>
-    <div class="form-group input-group mx-auto">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><%= fa_icon("video-camera") %></span>
+<div class="card-body mx-auto text-center">
+  <div class="card-body">
+    <h4 class="card-title mt-3 text-center">映画登録</h4>
+      <%= form_with(model: @movie, local:true) do |f| %>
+      <%= render "movies/shered/error_messages", movie: @movie %>
+      <div class="form-group input-group mx-auto">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= fa_icon("video-camera") %></span>
+        </div>
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"タイトル" %>
       </div>
-      <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"タイトル" %>
-    </div>
-    <div class="form-group input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><%= fa_icon("film") %></span>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= fa_icon("film") %></span>
+        </div>
+        <%= f.label :image %>
+        <%= f.file_field :image, autofocus: true, autocomplete: "image", placeholder:"email" %>
       </div>
-      <%= f.label :image %>
-      <%= f.file_field :image, autofocus: true, autocomplete: "image", placeholder:"email" %>
-    </div>
-    <div class="form-group input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"><%= fa_icon("eye") %></span>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= fa_icon("eye") %></span>
+        </div>
+        <%= f.select :watched_by, Movie.watched_bies.keys.to_a, autofocus: true, autocomplete: "watched_by", placeholder:"ニックネーム" %>
       </div>
-      <%= f.select :watched_by, Movie.watched_bies.keys.to_a, autofocus: true, autocomplete: "watched_by", placeholder:"ニックネーム" %>
-    </div>
-    <div class="form-group input-group">
-    <div class="form-group input-group mx-auto">
-    <div class="form-group">
-      <span class="input-group-text"><%= fa_icon("tags") %></span>
-    </div>
-      <% Category.all.each do |cat| %>
-      <%= f.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
-      <label><%= cat.name %></label>
-      <% end %>
-    </div>
-      <%= f.submit "登録する", class: "btn btn-lg btn-primary btn-block"%>
-    </div>
-  <% end %>
-  <%= link_to "一覧へ", movies_path %>
-</airticle>
+      <div class="form-group input-group">
+      <div class="form-group input-group mx-auto">
+      <div class="form-group">
+        <span class="input-group-text"><%= fa_icon("tags") %></span>
+      </div>
+        <% Category.all.each do |cat| %>
+        <%= f.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+        <label><%= cat.name %></label>
+        <% end %>
+      </div>
+        <%= f.submit "登録する", class: "btn btn-lg btn-outline-primary btn-block"%>
+      </div>
+    <% end %>
+    <%= link_to "一覧へ", movies_path %>
+  </div>
+</div>
 
 

@@ -24,9 +24,11 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.build(review_params)
     @review.movie_id = @movie.id
-    @review.save
-    # redirect_to reviews_path
-    redirect_to review_path(@review)
+    if @review.save
+      redirect_to review_path(@review)
+    else
+      render 'new'
+    end
   end
 
   def update

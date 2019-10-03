@@ -1,19 +1,12 @@
-<!--<form class="form-inline my-2 my-lg-0">-->
-  <%#= search_form_for @q do |f| %>
-    <%#= f.label :"" %>
-    <%#= f.search_field :title_cont, placeholder: "タイトル"  %>
-    <%#= f.submit "検索",class: "btn btn-primary" %>
-  <%# end %>
-<!--</form>-->
 <section class="jumbotron jumbotron-fluid text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">flicks</h1>
+    <h1 class="jumbotron-heading"><br>Flicks</h1>
     <p class="lead">映画を探す</p>
     <div class="d-flex justify-content-center h-80">
       <%= search_form_for @q do |f| %>
         <div class="form-inline search_bar">
           <%= f.search_field :title_cont, class: "form-control mr-sm-2", placeholder: "検索...", ontouchstart: ""  %>
-          <%= f.submit class: "btn btn-danger my-2 my-sm-0 search-btn" %>
+          <%= f.submit class: "btn btn-outline-danger my-2 my-sm-0 search-btn" %>
         </div>
       <% end %>
     </div>
@@ -24,30 +17,6 @@
     <% end %>
   </div>
 </section>
-
-<!--<table class="table">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--      <th colspan="5"></th>-->
-<!--    <th></th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-  <%# @movies.each do |movie| %>
-      <%#= link_to reviews_path(movie, movie.id) do %>
-        <%#= image_tag movie.image.url, :size =>'320x320' %>
-      <%#= render 'follow_form', movie: movie  %>
-      <%# end %>
-  <%# end %>
-<!--  </tbody>-->
-<!--  <div class="row">-->
-<!--    <div class="col-sm-12">-->
-      <%#= paginate @movies %>
-<!--    </div>-->
-<!--  </div>-->
-<!--</table>-->
-
-
 <div class="container">
   <div class="movie-top"><p></p></div>
   <div class="row">
