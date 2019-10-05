@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76409d2f-8e8d-428d-8f72-0ff2b977cb35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custum.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custum.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -54,7 +52,7 @@
             <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
-                  <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+                  <caret line="30" selection-start-line="30" selection-end-line="30" />
                 </state>
               </provider>
             </entry>
@@ -161,8 +159,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custum.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2924">
-                  <caret line="172" column="44" selection-start-line="172" selection-start-column="44" selection-end-line="172" selection-end-column="44" />
+                <state relative-caret-position="456">
+                  <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -692,7 +690,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235131000" />
+    <option name="totallyTimeSpent" value="235665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1100,7 +1098,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/reviews/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -1113,8 +1111,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custum.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2924">
-          <caret line="172" column="44" selection-start-line="172" selection-start-column="44" selection-end-line="172" selection-end-column="44" />
+        <state relative-caret-position="456">
+          <caret line="172" column="45" selection-start-line="172" selection-start-column="45" selection-end-line="172" selection-end-column="45" />
         </state>
       </provider>
     </entry>
