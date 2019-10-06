@@ -15,5 +15,6 @@ class RankingController < ApplicationController
       titles = title[0..4]
       ary = [titles, @address].transpose
       @ranking = Hash[*ary.flatten]
+    # binding.pry
   end
 end
