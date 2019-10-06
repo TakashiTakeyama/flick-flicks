@@ -1,11 +1,40 @@
+<!--<body>-->
+<!--  <div class="void">&emsp;</div>-->
+  <%# @a.each_with_index do |title, i| %>
+<!--  <p>-->
+    <%#= "今週の#{(i + 1)}位" %>
+    <%#= title %>
+<!--  </p>-->
+  <%# end %>
+<!--</body>-->
+
+<!--<style>-->
+<!--  .void {-->
+<!--    margin-top: 2rem;-->
+<!--  }-->
+<!--</style>-->
 <body>
-  <div class="void">&emsp;</div>
-  <% @a.each_with_index do |title, i| %>
-  <p>
-    <%= "今週の#{(i + 1)}位" %>
-    <%= title %>
-  </p>
-  <% end %>
+  <%# @arr.each_with_index do |src, i| %>
+  <%# @titles.each_with_index do |title, num| %>
+  <%# if i < 5 %>
+<!--    <p>-->
+    <%#= image_tag src %>
+<!--    </p>-->
+<!--    <p>-->
+      <%#= "今週の#{(num + 1)}位" %>
+      <%#= title %>
+<!--    </p>-->
+  <%# end %>
+  <%# end %>
+  <%# end %>
+ <div class="void">
+    <%= @ranking.each_with_index do |ranking, i| %>
+    <p>
+    <%= image_tag ranking[1] %>
+    <%= "今週の第#{i + 1}位は#{ranking[0]}" %>
+    </p>
+      <% end %>
+  </div>
 </body>
 
 <style>
