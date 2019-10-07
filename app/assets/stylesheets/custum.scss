@@ -173,10 +173,6 @@ a {
   background-image: image_url("sign_up.jpg");
 }
 
-.card {
-  //width: 300px;
-}
-
 .card-log {
   //width: 300px;
   background: linear-gradient(-135deg, #E4A972, #9941D8);
@@ -235,12 +231,14 @@ a {
 }
 
 .card-body {
-  max-width: 400px;
+  //max-width: 400px;
   padding: 60px 20px;
+  background-color: white;
+  //background-image: image_url("top_page.jpg");
 }
 
 .card-title {
-  color: white;
+  color: black;
 }
 .divider-text {
   position: relative;
@@ -262,5 +260,9 @@ a {
   top: 55%;
   left: 0;
   z-index: 1;
+}
+
+.wrapper {
+  background-image: image-url("top_page.jpg");
 }
 

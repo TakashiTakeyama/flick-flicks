@@ -28,23 +28,23 @@
   <%# end %>
 <body>
 <div class="title h2 text-center mb-3 mt-3">Movie ranking</div>
-<div class="col-md-4 mx-auto">
-    <% @ranking.each_with_index do |ranking, i| %>
-  <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-    <div class="card-body d-flex flex-column align-items-start">
-      <strong class="d-inline-block mb-2 text-primary">
-      </strong>
-      <h3 class="mb-0">
-        <a class="text-dark" href="#">This week</a>
-      </h3>
-      <div class="mb-1 text-muted h3"><%= "No#{i +1}" %></div>
-        <p class="card-text mb-auto h3"><%= ranking[0] %></p>
-        <a href="#">Comming soon</a>
+  <div class="col-md-4 mx-auto">
+      <% @ranking.each_with_index do |ranking, i| %>
+    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary">
+        </strong>
+        <h3 class="mb-0">
+          <a class="text-dark" href="#">This week</a>
+        </h3>
+        <div class="mb-1 text-muted h3"><%= "No#{i +1}" %></div>
+          <p class="card-text mb-auto h3"><%= ranking[0] %></p>
+          <a href="#">Comming soon</a>
+      </div>
+    <div class="card-img-right flex-auto d-none d-lg-block">
+      <%= image_tag ranking[1] %>
     </div>
-  <div class="card-img-right flex-auto d-none d-lg-block">
-    <%= image_tag ranking[1] %>
-  </div>
-  </div>
+    </div>
     <% end %>
 </div>
 </body>

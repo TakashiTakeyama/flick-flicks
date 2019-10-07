@@ -1,5 +1,8 @@
-<div class="card-log">
-  <div class="card-body mx-auto">
+<div>
+
+</div>
+<div class="card w-25 mx-auto d-flex align-items-center">
+  <div class="card-body">
     <h1 class="card-title mt-3 text-center">Log In</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
