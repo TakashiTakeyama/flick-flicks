@@ -25,6 +25,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Alegreya Sans SC', sans-serif;
 }
 
+.title {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: white;
+}
+
 h1 {
   font-size: 5em;
   letter-spacing: -2px;
@@ -64,6 +69,28 @@ a {
     a:hover {
       color: orange;
   }
+}
+
+.explanation {
+  //font-family: 'Alegreya Sans SC', sans-serif;
+  ////font-family: 'Oswald', sans-serif;
+  ////font-family: 'Lobster', cursive;
+  ////color: #fff;
+  //text-stroke: 5px black;
+  //-webkit-text-stroke: 3px black;
+  //text-shadow: 0px 0px 20px rgba(255,255,0,1);
+  //color: #FFAA3F;
+  //margin: 0px;
+  font-size: 1.5em;
+  text-align: center;
+  width: 44%;
+  position: relative;
+  padding: 1em 0em;
+  background: -webkit-linear-gradient(to right, rgb(255, 124, 111), #ffc994);
+  background: linear-gradient(to right, rgb(255, 124, 111), #ffc994);
+  color: white;
+  font-weight: lighter;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.56);
 }
 
 .navbar-custom {
@@ -263,6 +290,13 @@ a {
 }
 
 .wrapper {
-  background-image: image-url("top_page.jpg");
+  background-image: image-url("curtain.png");
+  height: 100%;
+}
+
+.btn-custom {
+  color: white !important;
+  background: -webkit-linear-gradient(to right, rgb(255, 124, 111), #ffc994);
+  background: linear-gradient(to right, rgb(255, 124, 111), #ffc994);
 }
 

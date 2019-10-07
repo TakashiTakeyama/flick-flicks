@@ -16,7 +16,6 @@
     <div class="review-button justify-content-center d-flex"><%= link_to 'レビューを書く', new_review_path(@movie, @movie.id), class:"btn btn-warning" %>
     </div></br>
     <h2><strong>Title&nbsp;&nbsp;</strong><%= @movie.title %></h2>
-
   <% @movie.reviews.each do |review| %>
     <div class="reviews">
       <div class="row blockquote review-item">
@@ -24,10 +23,8 @@
           <%= link_to review_path(review) do %>
             <%= image_tag review.user.icon.url, :size =>'80x80' %><br>
             <%= @movie.title %>
-            <%#= holder_tag '80x80', 'アイコン' unless review.user.image.attached? %>
           <% end %>
           <div class="caption">
-<!--            <small><%#= link_to review.user.username, review.user %></small>-->
           </div>
         </div>
         <div class="col-md-9">
@@ -38,24 +35,10 @@
       </div>
     </div>
 <!--  <div class="review-button"><%#= link_to 'すべてのレビューを見る', video_reviews_path(@video), class:"btn btn-info" %></div>-->
-  <% end %>
-  <%= link_to "映画一覧へ", movies_path %></br>
-<%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
-</div>
-
-<!--<div class="card" style="width: 18rem;">-->
-<!--  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>-->
-<!--  <div class="card-body">-->
-  <%# @movie.reviews.each do |review| %>
-      <%#= link_to review_path(review) do %>
-        <%#= review.impression %>
-        <%#= image_tag review.user.icon.url, :size =>'80x80' %>
-        <%#= holder_tag '80x80', 'アイコン' unless review.user.image.attached? %>
-        <%# end %>
-    <%# end %>
-<!--    <h5 class="card-title">Card title</h5>-->
-<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
-<!--  </div>-->
-<!--</div>-->
+    <% end %>
+    <div class="actions text-center">
+      <%= link_to "movies", movies_path, class: 'btn btn-default btn-lg'%></br>
+      <%= link_to "post-review", new_review_path(@movie, @movie.id), class: 'btn btn-default btn-lg'%>
+    </div>
+  </div>
 </div>

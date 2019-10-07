@@ -1,24 +1,16 @@
-<body>
 <section class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1 class="jumbotron-heading"><br><br>flick flicks</h1>
-    <p class="lead">映画を探す、レビューをする</p>
+    <div class="explanation mx-auto ">映画を探す、レビューをする、<br>ランキングを見る、おすすめ作品を知る。</div>
     <div class="d-flex justify-content-center h-100">
         <div class="form-inline search_bar">
         </div>
     </div>
+    <br>
     <% unless user_signed_in? %>
       <p class="signup-btn">
-        <%= link_to "登録して使う", new_user_registration_path, class:"btn btn-primary my-2" %>
+        <%= link_to "使ってみる", new_user_session_path, class:"btn btn-custom btn-lg" %>
       </p>
     <% end %>
   </div>
 </section>
-<div class="container">
-  <div class="movie-top"><p></p></div>
-  <div class="row">
-  </div>
-</div>
-</body>
-
-
