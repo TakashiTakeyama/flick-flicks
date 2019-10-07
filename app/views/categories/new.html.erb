@@ -1,24 +1,31 @@
-<%= form_with(model:@cat, local: true) do |form| %>
-  <% if @cat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cat.errors.count, "#{t('view.error')}") %></h2>
-
-      <ul>
-        <% @cat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="card-log">
+  <div class="card-body mx-auto">
+    <h1 class="card-title mt-3 text-center">Log In</h1>
+    <%= form_with(model:@cat, local: true) do |form| %>
+      <% if @cat.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@cat.errors.count, "#{t('view.error')}") %></h2>
+          <ul>
+            <% @cat.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <div class="form-group input-group mb-5">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon("envelope") %></span>
+          </div>
+          <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder:"category" %>
+        </div>
+        <div class="form-group input-group">
+          <div class="form-group">
+          </div>
+          <%= form.submit "Create", class: "btn btn-lg btn-primary btn-block"%>
+        </div>
+    <% end %>
+    <div class="form-group input-group">
+    <%#= link_to "一覧へ", movies_path %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to "一覧へ", movies_path %>
+</div>

@@ -1,42 +1,42 @@
-<div class="card-body mx-auto text-center">
-  <div class="card-body">
-    <h4 class="card-title mt-3 text-center">映画登録</h4>
-      <%= form_with(model: @movie, local:true) do |f| %>
-      <%= render "movies/shered/error_messages", movie: @movie %>
-      <div class="form-group input-group mx-auto">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><%= fa_icon("video-camera") %></span>
+<div class="wrapper">
+  <div class="card w-25 mx-auto text-center">
+    <div class="card-body mt-8 shadow-sm">
+      <h4 class="card-title mt-3 text-center">映画登録</h4>
+        <%= form_with(model: @movie, local:true) do |f| %>
+        <%= render "movies/shered/error_messages", movie: @movie %>
+        <div class="form-group input-group mx-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon("video-camera") %></span>
+          </div>
+          <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"タイトル" %>
         </div>
-        <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder:"タイトル" %>
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><%= fa_icon("film") %></span>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon("film") %></span>
+          </div>
+          <%= f.label :image %>
+          <%= f.file_field :image, autofocus: true, autocomplete: "image", placeholder:"email" %>
         </div>
-        <%= f.label :image %>
-        <%= f.file_field :image, autofocus: true, autocomplete: "image", placeholder:"email" %>
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><%= fa_icon("eye") %></span>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= fa_icon("eye") %></span>
+          </div>
+          <%= f.select :watched_by, Movie.watched_bies.keys.to_a, autofocus: true, autocomplete: "watched_by", placeholder:"ニックネーム" %>
         </div>
-        <%= f.select :watched_by, Movie.watched_bies.keys.to_a, autofocus: true, autocomplete: "watched_by", placeholder:"ニックネーム" %>
-      </div>
-      <div class="form-group input-group">
-      <div class="form-group input-group mx-auto">
-      <div class="form-group">
-        <span class="input-group-text"><%= fa_icon("tags") %></span>
-      </div>
-        <% Category.all.each do |cat| %>
-        <%= f.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
-        <label><%= cat.name %></label>
-        <% end %>
-      </div>
-        <%= f.submit "登録する", class: "btn btn-lg btn-outline-primary btn-block"%>
-      </div>
-    <% end %>
-    <%= link_to "一覧へ", movies_path %>
+        <div class="form-group input-group">
+        <div class="form-group input-group mx-auto">
+        <div class="form-group">
+          <span class="input-group-text"><%= fa_icon("tags") %></span>
+        </div>
+          <% Category.all.each do |cat| %>
+          <%= f.check_box :category_ids, { multiple: true, checked: cat[:checked], disabled: cat[:disabled], include_hidden: false }, cat[:id] %>
+          <label><%= cat.name %></label>
+          <% end %>
+        </div>
+          <%= f.submit "登録する", class: "btn btn-lg btn-outline-primary btn-block"%>
+        </div>
+      <% end %>
+      <%= link_to "一覧へ", movies_path %>
+    </div>
   </div>
 </div>
-
-
