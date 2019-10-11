@@ -11,5 +11,6 @@ class Movie < ApplicationRecord
   # has_many :favorite_movie, through: :favorite_reviews, source: :user
   has_many :movie_categories, dependent: :destroy
   has_many :categories, through: :movie_categories
+  has_one_attached :image
 end
 
