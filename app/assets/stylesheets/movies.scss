@@ -13,5 +13,13 @@
   text-align: center;
   background-image: image_url("curtain.png");
   background-repeat: repeat;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+  }
 }
+
+
 

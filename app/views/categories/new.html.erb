@@ -1,33 +1,26 @@
-<div class="wrapper">
-  <div class="card w-25 mx-auto">
-    <div class="card-body mx-auto">
-      <h2 class="card-title mt-3">Category</h2>
-      <br>
-      <%= form_with(model:@cat, local: true) do |form| %>
-        <% if @cat.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@cat.errors.count, "#{t('view.error')}") %></h2>
-            <ul>
-              <% @cat.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><%= fa_icon("tags") %></span>
+<div class="movie-show">
+  <div class="container pt-5">
+    <div class="card w-25 mx-auto">
+      <div class="card-body mx-auto">
+        <h2 class="card-title mt-3">Category</h2>
+        <br>
+        <%= form_with(model:@cat, local: true) do |form| %>
+          <%= render 'layouts/error_message', model: form.object %>
+            <div class="form-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><%= fa_icon("tags") %></span>
+              </div>
+              <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder:"category" %>
             </div>
-            <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder:"category" %>
-          </div>
-          <div class="form-group input-group">
-            <div class="form-group">
+            <div class="form-group input-group pt-4">
+              <div class="form-group">
+              </div>
+              <%= form.submit "Create", class: "btn btn-lg btn-custom btn-block"%>
             </div>
-            <%= form.submit "Create", class: "btn btn-lg btn-custom btn-block"%>
-          </div>
-        <% end %>
-      <div class="actions text-center">
-        <%= link_to "movies", movies_path, class: 'btn btn-default btn-lg'%></br>
+          <% end %>
+        <div class="actions text-center">
+          <%= link_to "movies", movies_path, class: 'btn btn-default btn-lg'%></br>
+        </div>
       </div>
     </div>
   </div>

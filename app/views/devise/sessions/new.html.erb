@@ -1,9 +1,10 @@
-<div class="wrapper">
-  <div class="card w-25 mx-auto d-flex align-items-center">
+<div class="movie-show pt-5 pb-5">
+  <div class="card w-25 mx-auto align-items-center">
     <div class="card-body">
       <h2 class="card-title mt-3 text-center">Log In</h2><br>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render 'layouts/error_message', model: f.object %>
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><%= fa_icon("envelope") %></span>

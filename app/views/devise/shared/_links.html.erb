@@ -31,5 +31,9 @@
   <%= f.hidden_field :email, value: "guest@guest.com" %>
   <%= f.hidden_field :password, value: "guest123" %>
   <%= button_tag sanitize('<i class="fa fa-sign-in fa-lg"></i> 簡単ログイン'), class: "btn btn-block btn-custom btn-lg" %>
+    <br>
+  <%= f.hidden_field :email, value: "take@gmail.com" %>
+  <%= f.hidden_field :password, value: "aaaaaa" %>
+  <%= button_tag sanitize('<i class="fa fa-sign-in fa-lg"></i> 簡単に管理者としてログイン'), class: "btn btn-block btn-custom btn-lg" %>
 <% end %>
 </div>

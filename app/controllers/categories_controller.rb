@@ -15,8 +15,11 @@ class CategoriesController < ApplicationController
 
   def create
     @cat = Category.new(cat_params)
-    @cat.save
-    redirect_to new_category_path, notice: "作成しました。"
+    if @cat.save
+      redirect_to new_category_path, notice: "作成しました。"
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -28,6 +31,6 @@ class CategoriesController < ApplicationController
   private
 
   def cat_params
-    params.require(:category).permit!
+    params.require(:category).permit(:name)
   end
 end
