@@ -8,3 +8,16 @@
   margin-bottom: 5px;
   box-shadow: 1px 1px 5px #343a40;
 }
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: image-url("curtain.png");
+  h2 {
+    color: white;
+  }
+  img {
+    justify-content: center;
+  }
+}

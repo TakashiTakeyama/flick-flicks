@@ -1,12 +1,12 @@
 <section class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1 class="jumbotron-heading"><br>Flicks</h1>
-    <p class="lead">映画を探す</p>
+<!--    <p class="lead">映画を探す</p>-->
     <div class="d-flex justify-content-center h-80">
       <%= search_form_for @q do |f| %>
         <div class="form-inline search_bar">
-          <%= f.search_field :title_cont, class: "form-control mr-sm-2", placeholder: "検索...", ontouchstart: ""  %>
-          <%= f.submit class: "btn btn-outline-danger my-2 my-sm-0 search-btn" %>
+          <%= f.search_field :title_cont, class: "form-control mr-sm-2", placeholder: "作品名...", ontouchstart: ""  %>
+          <%= f.submit class: "btn btn-custom search-btn" %>
         </div>
       <% end %>
     </div>

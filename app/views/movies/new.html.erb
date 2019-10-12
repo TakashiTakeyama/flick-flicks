@@ -4,7 +4,8 @@
       <h4 class="card-title mt-3 text-center">Movie Registration</h4>
       <br>
         <%= form_with(model: @movie, local:true) do |f| %>
-        <%= render "movies/shered/error_messages", movie: @movie %>
+        <%= render 'layouts/error_message', model: f.object %>
+        <%#= render "devise/shared/error_messages", movie: @movie %>
         <div class="form-group input-group mx-auto">
           <div class="input-group-prepend">
             <span class="input-group-text"><%= fa_icon("video-camera") %></span>

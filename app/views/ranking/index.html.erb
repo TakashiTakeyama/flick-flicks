@@ -27,7 +27,7 @@
   <%# end %>
   <%# end %>
 <div class="wrapper">
-  <div class="title h2 text-center mb-3 mt-3">Movie Ranking</div>
+  <div class="title h2 text-center pt-3 pb-2">Movie Ranking</div>
     <div class="col-md-4 mx-auto">
         <% @ranking.each_with_index do |ranking, i| %>
       <div class="card flex-md-row mb-4 shadow-sm h-md-250">
@@ -45,6 +45,6 @@
         <%= image_tag ranking[1] %>
       </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>

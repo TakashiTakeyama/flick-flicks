@@ -1,29 +1,23 @@
-<%= form_with(model:@review,local: true) do |form| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "#{t('view.error')}") %></h2>
-      <ul>
-        <% @review.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="card w-25 mx-auto ">
- <div class="card-body text-center">
-   <h1 class="card-title"></h1>
-      <div class="field">
-        <%= image_tag @movie.image.url, :size =>'320x320' %>
-      </div><br>
-      <div class="field text-center">
-        <%#= form.label :impression %>
-        <%= form.text_area :impression, :size => '40x5' %>
-        <%= hidden_field_tag :movie_id, @movie.id %>
-      </div><br>
-      <div class="actions text-center">
-        <%= form.submit('POST',class: 'btn btn-default') %>
-        <%= link_to "MOVIES", movies_path, class: 'btn btn-default' %>
+<div class="review">
+  <div class="container">
+  <%= form_with(model:@review,local: true) do |form| %>
+    <%= render 'layouts/error_message', model: form.object %>
+      <div class="text-center">
+    <%= image_tag @movie.image.url, :size =>'320x320' %>
       </div>
-    <% end %>
- </div>
+    <div class="card w-50 mx-auto">
+     <div class="card-body">
+       <h1 class="card-title mb-4">review</h1>
+          <div class="field text-center">
+            <%= form.text_area :impression, :size => '50x10' %>
+            <%= hidden_field_tag :movie_id, @movie.id %>
+          </div><br>
+          <div class="actions text-center">
+            <%= form.submit('POST',class: 'btn btn-default') %>
+            <%= link_to "MOVIES", movies_path, class: 'btn btn-default' %>
+          </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
 </div>
