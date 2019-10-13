@@ -71,6 +71,8 @@
     <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v0.0.3, rbenv: 2.6.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.7.1, rbenv: 2.6.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="domain_name (v0.5.20190701, rbenv: 2.6.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv (v2.7.5, rbenv: 2.6.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv-rails (v2.7.5, rbenv: 2.6.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.8.0, rbenv: 2.6.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, rbenv: 2.6.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.15.4, rbenv: 2.6.4) [gem]" level="application" />
