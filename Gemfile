@@ -76,3 +76,4 @@ gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap', '~> 4.3.1'
 gem "font-awesome-rails"
+gem 'dotenv-rails'
