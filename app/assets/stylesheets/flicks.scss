@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .swiper-container {
-  width: 600px;
-  height: 300px;
+  display: flex;
+  height: 75vh;
+  background-image: image-url("curtain.png");
+  .swiper-slide {
+    padding: 2%;
+    align-items: center;
+  }
 }
