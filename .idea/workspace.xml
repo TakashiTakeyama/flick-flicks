@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76409d2f-8e8d-428d-8f72-0ff2b977cb35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/movie/image/1/octo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/movie/image/2/octo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/movie/image/3/octo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/movie/image/45/175929_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/movie/image/46/hello-world-poster04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/tmp/1571038627-649445794983600-0002-4798/octo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/user/icon/2/octo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/factories/category.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/factories/movie.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/system/categories_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/system/movies_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/movies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/movies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/movies/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/system/users_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/system/users_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -72,11 +57,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/movies/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="544">
                   <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -187,7 +181,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custum.scss" />
         <option value="$PROJECT_DIR$/public/404.html" />
         <option value="$PROJECT_DIR$/public/500.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/custum.js" />
         <option value="$PROJECT_DIR$/app/views/flicks/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
@@ -207,6 +200,7 @@
         <option value="$PROJECT_DIR$/spec/system/movies_spec.rb" />
         <option value="$PROJECT_DIR$/app/controllers/movies_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/movies/index.html.erb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -640,12 +634,12 @@
       <workItem from="1570270793036" duration="502000" />
       <workItem from="1570353548609" duration="8449000" />
       <workItem from="1570951633543" duration="1117000" />
-      <workItem from="1571015477931" duration="14186000" />
+      <workItem from="1571015477931" duration="14532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296027000" />
+    <option name="totallyTimeSpent" value="296373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,13 +756,6 @@
     <SUITE FILE_PATH="coverage/flick_flicks@Development__flick_flicks.rcov" NAME="Development: flick-flicks Coverage Results" MODIFIED="1568992607988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="flick-flicks" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/movies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1087,6 +1074,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
         </state>
       </provider>
     </entry>
