@@ -30,7 +30,7 @@
         </li>
         <% if user_signed_in? && current_user.admin_flg? %>
           <li class="nav-item active"><%= link_to "post-movie", new_movie_path, class: "nav-link" %></li>
-          <li class="nav-item active"><%= link_to "movies", movies_path, class: "nav-link" %></li>
+          <li class="nav-item active"><%= link_to "movies", movies_path(anchor: 'some-id'), class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "users", users_path, class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "ranking", ranking_index_path, class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "flicks", flicks_index_path, class: "nav-link" %></li>
