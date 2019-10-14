@@ -30,18 +30,18 @@ RSpec.describe 'Movies', type: :system do
   #   expect(page).to have_content 'ロッキー１'
   # end
 
-  it 'タイトル検索が機能しているかのテスト' do
-    create(:movie)
-    create(:second_movie)
-    create(:third_movie)
-    visit movies_path
-    expect(page).to have_content 'ロッキー１'
-    expect(page).to have_content 'ロッキー２'
-    expect(page).to have_content 'ロッキー３'
-    fill_in 'q_title_cont', with: 'ロッキー１'
-    click_button '検索'
-    expect(page).to have_content 'ロッキー１'
-    expect(page).to_not have_content 'ロッキー２'
-    expect(page).to_not have_content 'ロッキー３'
-  end
+  # it 'タイトル検索が機能しているかのテスト' do
+  #   create(:movie)
+  #   create(:second_movie)
+  #   create(:third_movie)
+  #   visit movies_path
+  #   expect(page).to have_content 'ロッキー１'
+  #   expect(page).to have_content 'ロッキー２'
+  #   expect(page).to have_content 'ロッキー３'
+  #   fill_in 'q_title_cont', with: 'ロッキー１'
+  #   click_button '検索'
+  #   expect(page).to have_content 'ロッキー１'
+  #   expect(page).to_not have_content 'ロッキー２'
+  #   expect(page).to_not have_content 'ロッキー３'
+  # end
 end
