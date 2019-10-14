@@ -27,3 +27,5 @@
 
 #dotenv-rails
 .env
+
+.idea/**/workspace.xml
