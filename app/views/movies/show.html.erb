@@ -1,4 +1,7 @@
 <div class="movie-show">
+  <div class="alert alert-success" role="alert">
+    <%= flash[:notice] %>
+  </div>
   <div class="text-center">
     <%= image_tag @movie.image.url, :size =>'320x320' %>
   </div>
@@ -19,11 +22,11 @@
       <p>
       <% if @favorite.present? %>
         <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
-          <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+          <i class="fa fa-star fa-2x" aria-hidden="true">bad</i>
         <% end %>
       <% else %>
         <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
-          <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+          <i class="fa fa-star-o fa-2x" aria-hidden="true">good</i>
         <% end %>
       <% end %>
     </p>
