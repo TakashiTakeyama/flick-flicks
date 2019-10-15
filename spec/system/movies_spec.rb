@@ -10,25 +10,25 @@ RSpec.describe 'Movies', type: :system do
     click_button 'Log in'
   end
 
-  # it 'Movieを作成できるかのテスト' do
-  #   visit new_movie_path
-  #   fill_in 'movie_title', with: 'ロッキー１'
-  #   select 'Amazon_Prime', from: 'movie_watched_by'
-  #   attach_file 'movie_image', "#{Rails.root}/spec/support/octo.png"
-  #   click_button 'Registration'
-  #   expect(page).to have_content 'ロッキー１'
-  # end
+  it 'Movieを作成できるかのテスト' do
+    visit new_movie_path
+    fill_in 'movie_title', with: 'ロッキー１'
+    select 'Amazon_Prime', from: 'movie_watched_by'
+    attach_file 'movie_image', "#{Rails.root}/spec/support/octo.png"
+    click_button 'Registration'
+    expect(page).to have_content 'ロッキー１'
+  end
 
-  # it 'MovieにCategoryが保存できるかのテスト' do
-  #   visit new_movie_path
-  #   fill_in 'movie_title', with: 'ロッキー１'
-  #   select 'Amazon_Prime', from: 'movie_watched_by'
-  #   attach_file 'movie_image', "#{Rails.root}/spec/support/octo.png"
-  #   check 'movie_category_ids_1'
-  #   click_button 'Registration'
-  #   visit movie_path(1)
-  #   expect(page).to have_content 'ロッキー１'
-  # end
+  it 'MovieにCategoryが保存できるかのテスト' do
+    visit new_movie_path
+    fill_in 'movie_title', with: 'ロッキー１'
+    select 'Amazon_Prime', from: 'movie_watched_by'
+    attach_file 'movie_image', "#{Rails.root}/spec/support/octo.png"
+    check 'movie_category_ids_1'
+    click_button 'Registration'
+    visit movie_path(1)
+    expect(page).to have_content 'ロッキー１'
+  end
 
   it 'タイトル検索が機能しているかのテスト' do
     create(:movie)
@@ -43,5 +43,22 @@ RSpec.describe 'Movies', type: :system do
     expect(page).to have_content 'ロッキー１'
     expect(page).to_not have_content 'ロッキー２'
     expect(page).to_not have_content 'ロッキー３'
+  end
+
+  context 'テストの為のmovieを作成' do
+    let!(:movie) { create(:movie) }
+    it 'movieに対してお気に入り登録ができるかのテスト' do
+      visit movie_path(movie)
+      click_link 'good'
+      expect(page).to have_content 'お気に入り登録しました'
+    end
+
+    it 'movieに対してお気に入り登録が解除できるかのテスト' do
+      visit movie_path(movie)
+      click_link 'good'
+      visit movie_path(movie)
+      click_link 'bad'
+      expect(page).to have_content 'お気に入り解除しました'
+    end
   end
 end
