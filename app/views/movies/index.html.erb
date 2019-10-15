@@ -1,10 +1,11 @@
 <section class="jumbotron jumbotron-fluid text-center">
   <div class="container">
-    <div class="alert alert-success" role="alert">
+    <% if flash[:notice]%>
+    <div class="alert alert-dismissible mx-auto" role="alert">
       <%= flash[:notice] %>
     </div>
+    <% end %>
     <h1 class="jumbotron-heading"><br>Flicks</h1>
-<!--    <p class="lead">映画を探す</p>-->
     <div class="d-flex justify-content-center h-80">
       <%= search_form_for(@q, url:movies_path(anchor:'some-id')) do |f| %>
         <div class="form-inline search_bar">
@@ -30,7 +31,6 @@
           <div class="card-body">
             <p class="card-text text-center"><%= movie.title %></p>
             <div class="d-flex justify-content-between align-items-center">
-<!--              <small class="text-muted"><%#= Date.parse(movie.date.to_s).strftime("%Y年%m月%d日") %></small>-->
             </div>
           </div>
         </div>

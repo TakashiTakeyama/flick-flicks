@@ -5,7 +5,7 @@
       <div class="col-md-3">
         <div class="card mb-4 shadow-sm">
           <div class="userImg">
-          <%= link_to image_tag(user.icon.url, class: "card-img-top", :size =>'300x300' ), users_path %>
+          <%= link_to image_tag(user.icon.url, class: "card-img-top", :size =>'300x300' ), user_registration_path(user) %>
           </div>
           <div class="card-body">
             <p class="card-text text-center"><%= user.name %></p>

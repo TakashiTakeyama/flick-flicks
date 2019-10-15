@@ -9,7 +9,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
-    <!--    <link rel="stylesheet" href="path/to/swiper.min.css">-->
   </head>
   <nav class="navbar navbar-expand-lg ">
     <a class="navbar-brand h1">
@@ -22,7 +21,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -48,7 +46,7 @@
         </li>
         <% elsif user_signed_in? %>
           <li class="nav-item active"><%= link_to "post-movie", new_movie_path, class: "nav-link" %></li>
-          <li class="nav-item active"><%= link_to "movies", movies_path, class: "nav-link" %></li>
+          <li class="nav-item active"><%= link_to "movies", movies_path(anchor: 'some-id'), class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "users", users_path, class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "ranking", ranking_index_path, class: "nav-link" %></li>
           <li class="nav-item active"><%= link_to "flicks", flicks_index_path, class: "nav-link" %></li>
@@ -65,21 +63,15 @@
           <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>
           <%= link_to "LogIn", new_user_session_path, class: "nav-link" %>
         <% end %>
-<!--      <form class="form-inline my-2 my-lg-0">-->
-<!--        <input class="form-control mr-sm-2" type="search" placeholder="タイトル" aria-label="Search">-->
-<!--        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
       </form>
     </div>
   </nav>
   <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
   <%= yield %>
-<!--  <script src="https://unpkg.com/swiper/js/swiper.js"></script>-->
   </body>
   <footer class="page-footer font-small special-color-dark pt-4">
-    <!-- Footer Elements -->
     <div class="container">
-      <!-- Social buttons -->
       <ul class="list-unstyled list-inline text-center">
         <li class="list-inline-item">
           <a class="btn-floating btn-fb mx-1">
@@ -98,13 +90,9 @@
         </li>
         <li>
       </ul>
-      <!-- Social buttons -->
     </div>
-    <!-- Footer Elements -->
-    <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
       <a href="https://takashitakeyama.github.io"> TakeyamaTakashi.Inc</a>
     </div>
-    <!-- Copyright -->
   </footer>
 </html>
