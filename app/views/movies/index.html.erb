@@ -1,8 +1,10 @@
 <section class="jumbotron jumbotron-fluid text-center">
   <div class="container">
-    <div class="alert alert-success alert-dismissible" role="alert">
+    <% if flash[:notice]%>
+    <div class="alert alert-dismissible mx-auto" role="alert">
       <%= flash[:notice] %>
     </div>
+    <% end %>
     <h1 class="jumbotron-heading"><br>Flicks</h1>
     <div class="d-flex justify-content-center h-80">
       <%= search_form_for(@q, url:movies_path(anchor:'some-id')) do |f| %>

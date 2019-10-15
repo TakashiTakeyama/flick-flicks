@@ -235,9 +235,15 @@ img {
 }
 
 .alert {
-  color: red;
-  text-align: left;
-  margin-bottom: 0;
+  background: -webkit-linear-gradient(to right, rgb(255, 124, 111), #ffc994);
+  background: linear-gradient(to right, rgb(255, 124, 111), #ffc994);
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  width: 70%;
+  ul {
+    color: white;
+  }
 }
 
 /* sign in form */
