@@ -22,7 +22,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -65,16 +64,12 @@
           <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>
           <%= link_to "LogIn", new_user_session_path, class: "nav-link" %>
         <% end %>
-<!--      <form class="form-inline my-2 my-lg-0">-->
-<!--        <input class="form-control mr-sm-2" type="search" placeholder="タイトル" aria-label="Search">-->
-<!--        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
       </form>
     </div>
   </nav>
   <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
   <%= yield %>
-<!--  <script src="https://unpkg.com/swiper/js/swiper.js"></script>-->
   </body>
   <footer class="page-footer font-small special-color-dark pt-4">
     <!-- Footer Elements -->
