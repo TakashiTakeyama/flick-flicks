@@ -17,22 +17,26 @@
           <%= cat.name %>
           <% end %>
       </p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= link_to "post-review", new_review_path(@movie, @movie.id)%></br>
-      <%= link_to "reviews", reviews_path(@movie, @movie.id) %></br>
-      <%= link_to "movies", movies_path %></br>
+      <p class="card-text"></p>
+      <p class="button">
+        <%= link_to "post-review", new_review_path(@movie, @movie.id), class: "btn btn-custom btn-lg"%></br>
+      </p>
+      <p class="button">
+        <%= link_to "reviews", reviews_path(@movie, @movie.id), class: "btn btn-custom btn-lg"%></br>
+      </p>
+      <p class="button">
+        <%= link_to "movies", movies_path, class: "btn btn-custom btn-lg"%></br>
+      </p>
       <p>
       <% if @favorite.present? %>
         <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
-          <i class="fa fa-star fa-2x" aria-hidden="true">bad</i>
+          <i class="fa fa-star fa-1x pt-4" aria-hidden="true">Bad</i>
         <% end %>
       <% else %>
         <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
-          <i class="fa fa-star-o fa-2x" aria-hidden="true">good</i>
+          <i class="fa fa-star-o fa-1x pt-4" aria-hidden="true">Good!</i>
         <% end %>
       <% end %>
-    </p>
     </div>
   </div>
 </div>
-

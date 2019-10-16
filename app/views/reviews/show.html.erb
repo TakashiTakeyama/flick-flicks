@@ -2,45 +2,39 @@
 <% mov = @review.movie %>
 <% @movie = Movie.find(mov.id) %>
 <div class="review">
-<div class="container">
-  <div class="mx-auto text-center">
-  <%= image_tag @movie.image.url, :size =>'320x320' %>
-
-  </div>
-  <br>
-    <div class="col-md-4 mx-auto">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-          <p class="card-text text-center"><%= @movie.title %></p>
-          <div>
-          <%= @review.impression %>
-          </div>
-          <br>
-          <div>
-            <%= @movie.watched_by + "でみました！" %>
-          </div>
-          <div class="">
-          <% unless @review.user_id == current_user.id %>
-            <% if @favorite.present? %>
-          <%= link_to favorite_review_path(id: @review.id), method: :delete do %>
-            <i class="fa fa-thumbs-up mx-auto" aria-hidden="true">bad</i>
-          <% end %>
-            <% else %>
-          <%= link_to favorite_reviews_path(review_id: @review.id), method: :post do %>
-            <i class="fa fa-thumbs-o-up mx-auto" aria-hidden="true">good</i>
-            <% end %>
-            <% end %>
-          <% end %>
-          </div>
+  <div class="container pt-3">
+    <h2>Review</h2>
+    <div class="video-info justify-content-center d-flex">
+      <%= image_tag @movie.image.url, :size =>'320x320' %>
+    </div><br>
+    <h2><strong>Title&nbsp;&nbsp;</strong><%= @movie.title %></h2>
+      <div class="row blockquote review-item w-75 mx-auto">
+        <div class="col-md-3 text-center">
+          <%= image_tag @review.user.icon.url, :size =>'80x80' %><br>
+          <%= @review.user.name %>
         </div>
-        <div class="d-flex justify-content-center">
-          <div class="col">
-          <%= link_to "映画一覧へ", movies_path %></br>
-          <%= link_to "レビュー一覧", reviews_path(@movie, @movie.id) %></br>
-          <%= link_to "レビューを投稿する", new_review_path(@movie, @movie.id)%>
+        <div class="col-md-9">
+        <%= @review.impression %><br>
+        <%= @movie.watched_by + "でみれます！" %>
+        <div class="text-center">
+        <% unless @review.user_id == current_user.id %>
+          <% if @favorite.present? %>
+        <%= link_to favorite_review_path(id: @review.id), method: :delete do %>
+          <i class="fa fa-thumbs-up mx-auto" aria-hidden="true">bad</i>
+        <% end %>
+          <% else %>
+        <%= link_to favorite_reviews_path(review_id: @review.id), method: :post do %>
+          <i class="fa fa-thumbs-o-up mx-auto" aria-hidden="true">good</i>
+          <% end %>
+          <% end %>
+        <% end %>
         </div>
-          </div>
+        </div>
       </div>
+    <div class="actions text-center">
+      <%= link_to "movies", movies_path, class: 'btn btn-custom mb-3' %><br>
+      <%= link_to "reviews", reviews_path(@movie, @movie.id), class: 'btn btn-custom mb-3' %><br>
+      <%= link_to "post-review", new_review_path(@movie, @movie.id), class: 'btn btn-custom mb-3' %>
     </div>
-</div>
+  </div>
 </div>

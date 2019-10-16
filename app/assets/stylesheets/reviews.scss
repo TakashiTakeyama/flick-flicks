@@ -5,7 +5,7 @@
 .review-item{
   background-color: white;
   padding: 15px;
-  margin-bottom: 5px;
+  //margin-bottom: 5px;
   box-shadow: 1px 1px 5px #343a40;
 }
 
@@ -17,7 +17,16 @@
   h2 {
     color: white;
   }
+}
+
+.review {
   img {
-    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.review {
+  img {
+
   }
 }

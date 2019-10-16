@@ -1,27 +1,67 @@
-<h3>ユーザー詳細</h3>
-<p>
-  <strong>イメージ</strong>
-  <%= image_tag @user.icon.url, :size =>'320x320' %>
-</p>
+<!--<div class="movie-show">-->
+<!--  <div class="text-center">-->
+    <%# if flash[:notice] %>
+<!--      <div class="alert mx-auto" role="alert">-->
+        <%#= flash[:notice] %>
+<!--      </div>-->
+    <%# end %>
+<!--  </div>-->
+    <%#= image_tag @user.icon.url, :size =>'320x320' %>
+<!--    <h5 class="card-title"><%#= @user.name + "さんのレビュー一覧" %></h5>-->
+    <%# @user.reviews.each do |review| %>
+<!--    <div class="card mx-auto text-center col-lg-4 p-4 mt-4 mb-4">-->
+<!--        <p><%#= review.impression %></p>-->
+      <%# if review.movie_id.present? %>
+<!--        <p><%#= review.movie.title %></p>-->
+      <%# end %>
+<!--    </div>-->
+    <%# end %>
+<!--    <div class="card-body text-center">-->
+<!--    </div>-->
+<!--    <h4 class="card-subtitle mb-2 text-muted">-->
+<!--    </h4>-->
+<!--    <p class="card-text"></p>-->
+<!--  <div class="actions text-center pb-3">-->
+    <%#= link_to "movies", movies_path, class: 'btn btn-custom'%>
+    <%#= link_to "users", users_path, class: 'btn btn-custom'%>
+<!--  </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-<p>
-  <strong>名前</strong>
-  <%= @user.name %>
-</p>
+<div class="review">
+  <div class="container" %>
+<!--    <h2>Review</h2>-->
+    <div class="video-info justify-content-center d-flex">
+      <%= image_tag @user.icon.url, :size =>'320x320' %>
+    </div>
+    </div></br>
+    <h2><strong>&nbsp;&nbsp;</strong><%= @user.name + "さんのreviews" %></h2>
+    <% @user.reviews.each do |review| %>
+      <div class="reviews">
+        <div class="row blockquote review-item mx-auto col-lg-5 p-4 mt-4 mb-4">
+          <div class="col-md-3 text-center">
+              <% if review.movie_id.present? %>
+            <%= link_to movie_path(review.movie_id) do %>
+              <%= image_tag review.movie.image.url, :size =>'80x80' %><br>
+              <%= review.movie.title %>
+                <% end %>
+            <% end %>
+            <div class="caption">
+            </div>
+          </div>
+          <div class="col-md-9">
+            <%= review.impression %><br>
+<!--            <%#= @movie.watched_by + "#{'で見られるよ!'}"%><br>-->
+            <small class="review-date"><%= Date.parse(review.created_at.to_s).strftime("%Y年%m月%d日") %></small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="actions text-center pb-3">
+      <%= link_to "movies", movies_path, class: 'btn btn-custom'%>
+      <%= link_to "users", users_path, class: 'btn btn-custom'%>
+    </div>
+  </div>
+</div>
+</div>
 
-<!--<p>-->
-<!--  <strong>お気に入り</strong>-->
-<%#= @user.impression %>
-<%# unless @user.user_id == current_user.id %>
-  <%# if @favorite.present? %>
-    <%#= link_to 'お気に入り解除する', favorite_movie_path(id: @user.id), method: :delete, class: 'btn btn-danger' %>
-  <%# else %>
-    <%#= link_to 'お気に入りする', favorite_movies_path(movie_id: @user.id), method: :post, class: 'btn btn-primary' %>
-  <%# end %>
-<%# end %>
-<!--</p>-->
-
-
-<%= link_to "映画一覧へ", movies_path %>
-<%= link_to "レビュー一覧", reviews_path(@user, @user.id) %>
-<%= link_to "レビューを投稿する", new_review_path(@user, @user.id)%>
