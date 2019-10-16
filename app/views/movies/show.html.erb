@@ -1,4 +1,4 @@
-<div class="movie-show">
+<div class="movie-show pb-3">
   <div class="text-center">
     <% if flash[:notice] %>
       <div class="alert mx-auto" role="alert">
@@ -7,7 +7,7 @@
     <% end %>
     <%= image_tag @movie.image.url, :size =>'320x320' %>
   </div>
-  <div class="card mx-auto text-center" style="width: 18rem;">
+  <div class="card mx-auto text-center mb-3" style="width: 18rem;">
     <div class="card-body text-center">
       <h5 class="card-title">映画情報</h5>
         <h4 class="card-subtitle mb-2 text-muted">
@@ -30,11 +30,11 @@
       <p>
       <% if @favorite.present? %>
         <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
-          <i class="fa fa-star fa-1x pt-4" aria-hidden="true">Bad</i>
+          <i class="fa fa-star fa-1x btn btn-custom" aria-hidden="true">Bad</i>
         <% end %>
       <% else %>
         <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
-          <i class="fa fa-star-o fa-1x pt-4" aria-hidden="true">Good!</i>
+          <i class="fa fa-star-o fa-1x btn btn-custom" aria-hidden="true">Good!</i>
         <% end %>
       <% end %>
     </div>

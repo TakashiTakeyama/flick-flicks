@@ -5,16 +5,16 @@
       <div class="text-center">
     <%= image_tag @movie.image.url, :size =>'320x320' %>
       </div>
-    <div class="card w-50 mx-auto">
+    <div class="card w-50 mx-auto mb-3">
      <div class="card-body">
-       <h1 class="card-title mb-4">review</h1>
+       <h3 class="card-title mb-4 text-center">Post-review</h3>
           <div class="field text-center">
             <%= form.text_area :impression, :size => '50x10' %>
             <%= hidden_field_tag :movie_id, @movie.id %>
           </div><br>
           <div class="actions text-center">
-            <%= form.submit('POST',class: 'btn btn-default') %>
-            <%= link_to "MOVIES", movies_path, class: 'btn btn-default' %>
+            <%= form.submit('POST',class: 'btn btn-custom') %>
+            <%= link_to "MOVIES", movies_path, class: 'btn btn-custom' %>
           </div>
         <% end %>
      </div>

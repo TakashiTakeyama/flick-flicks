@@ -8,29 +8,31 @@
       <%= image_tag @movie.image.url, :size =>'320x320' %>
     </div><br>
     <h2><strong>Title&nbsp;&nbsp;</strong><%= @movie.title %></h2>
-      <div class="row blockquote review-item w-75 mx-auto">
-        <div class="col-md-3 text-center">
+    <div class="row blockquote review-item w-75 mx-auto">
+      <div class="col-md-3 text-center">
+        <%= link_to user_path(@review.user) do %>
           <%= image_tag @review.user.icon.url, :size =>'80x80' %><br>
           <%= @review.user.name %>
-        </div>
-        <div class="col-md-9">
+        <% end %>
+      </div>
+      <div class="col-md-9">
         <%= @review.impression %><br>
         <%= @movie.watched_by + "でみれます！" %>
         <div class="text-center">
-        <% unless @review.user_id == current_user.id %>
-          <% if @favorite.present? %>
-        <%= link_to favorite_review_path(id: @review.id), method: :delete do %>
-          <i class="fa fa-thumbs-up mx-auto" aria-hidden="true">bad</i>
-        <% end %>
-          <% else %>
-        <%= link_to favorite_reviews_path(review_id: @review.id), method: :post do %>
-          <i class="fa fa-thumbs-o-up mx-auto" aria-hidden="true">good</i>
+          <% unless @review.user_id == current_user.id %>
+            <% if @favorite.present? %>
+              <%= link_to favorite_review_path(id: @review.id), method: :delete do %>
+                <i class="fa fa-thumbs-up mx-auto" aria-hidden="true">bad</i>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_reviews_path(review_id: @review.id), method: :post do %>
+                <i class="fa fa-thumbs-o-up mx-auto" aria-hidden="true">good</i>
+              <% end %>
+            <% end %>
           <% end %>
-          <% end %>
-        <% end %>
-        </div>
         </div>
       </div>
+    </div>
     <div class="actions text-center">
       <%= link_to "movies", movies_path, class: 'btn btn-custom mb-3' %><br>
       <%= link_to "reviews", reviews_path(@movie, @movie.id), class: 'btn btn-custom mb-3' %><br>
