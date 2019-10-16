@@ -49,15 +49,15 @@ RSpec.describe 'Movies', type: :system do
     let!(:movie) { create(:movie) }
     it 'movieに対してお気に入り登録ができるかのテスト' do
       visit movie_path(movie)
-      click_link 'good'
+      click_link 'Good!'
       expect(page).to have_content 'お気に入り登録しました'
     end
 
     it 'movieに対してお気に入り登録が解除できるかのテスト' do
       visit movie_path(movie)
-      click_link 'good'
+      click_link 'Good!'
       visit movie_path(movie)
-      click_link 'bad'
+      click_link 'Bad'
       expect(page).to have_content 'お気に入り解除しました'
     end
   end
