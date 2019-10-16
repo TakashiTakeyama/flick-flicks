@@ -1,0 +1,37 @@
+<div class="movie-show">
+  <div class="text-center">
+    <% if flash[:notice] %>
+      <div class="alert mx-auto" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= image_tag @movie.image.url, :size =>'320x320' %>
+  </div>
+  <div class="card mx-auto text-center" style="width: 18rem;">
+    <div class="card-body text-center">
+      <h5 class="card-title">映画情報</h5>
+      <h4 class="card-subtitle mb-2 text-muted">
+        <%= @movie.title %>
+      </h4>
+      <p><% @movie.categories.each do |cat| %>
+          <%= cat.name %>
+        <% end %>
+      </p>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to "post-review", new_review_path(@movie, @movie.id)%></br>
+      <%= link_to "reviews", reviews_path(@movie, @movie.id) %></br>
+      <%= link_to "movies", movies_path %></br>
+      <p>
+        <% if @favorite.present? %>
+          <%= link_to  favorite_movie_path(id: @movie.id), method: :delete do %>
+            <i class="fa fa-star fa-2x" aria-hidden="true">bad</i>
+          <% end %>
+        <% else %>
+          <%= link_to  favorite_movies_path(movie_id: @movie.id), method: :post do %>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true">good</i>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

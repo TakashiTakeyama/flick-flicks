@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :favorite_reviews, only: [:create, :destroy]
   resources :favorite_movies, only: [:create, :destroy]
   resources :categories
-  resources :users, only: [:index]
+  resources :users, only: [:index,:show]
   resources :relationships, only: [:create, :destroy]
   resources :movies do
     member do

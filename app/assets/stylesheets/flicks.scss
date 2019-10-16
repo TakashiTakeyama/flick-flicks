@@ -4,10 +4,12 @@
 
 .swiper-container {
   display: flex;
+  //flex-direction: row;
+  align-items: center;
   height: 75vh;
   background-image: image-url("curtain.png");
   .swiper-slide {
     padding: 2%;
-    align-items: center;
+    //align-items: center;
   }
 }

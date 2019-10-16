@@ -1,12 +1,12 @@
 <section class="jumbotron jumbotron-fluid text-center">
-  <div class="container">
+  <div class="container" id="movie">
     <% if flash[:notice]%>
     <div class="alert alert-dismissible mx-auto" role="alert">
       <%= flash[:notice] %>
     </div>
     <% end %>
     <h1 class="jumbotron-heading"><br>Flicks</h1>
-    <div class="d-flex justify-content-center h-80">
+    <div class="d-flex justify-content-center">
       <%= search_form_for(@q, url:movies_path(anchor:'some-id')) do |f| %>
         <div class="form-inline search_bar">
           <%= f.search_field :title_cont, class: "form-control mr-sm-2", placeholder: "作品名...", ontouchstart: ""  %>
@@ -24,8 +24,14 @@
 <div class="container">
   <div class="movie-top" id="some-id"><p></p></div>
   <div class="row">
-    <% @movies.each do |movie| %>
-      <div class="col-md-4">
+    <% @movies.each_with_index do |movie, i| %>
+      <% if i%3==0 %>
+        <div class="col-md-3">
+      <% elsif i%2==0 %>
+        <div class="col-md-4">
+      <% else %>
+        <div class="col-md-5">
+      <% end %>
         <div class="card mb-4 shadow-sm">
           <%= link_to image_tag(movie.image.url, class: "card-img-top"), movie_path(movie) %>
           <div class="card-body">
@@ -39,5 +45,3 @@
   </div>
   <div><%= paginate @movies, window: 2 %></div>
 </div>
-
-

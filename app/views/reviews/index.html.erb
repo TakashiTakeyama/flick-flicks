@@ -1,6 +1,6 @@
 <div class="review">
-  <div class="container" %>
-    <h2>Review</h2>
+  <div class="container pt-3" %>
+    <h2>Reviews</h2>
     <% @movie = Movie.find(params[:format]) %>
     <div class="video-info justify-content-center d-flex">
     <%= image_tag @movie.image.url, :size =>'320x320' %>

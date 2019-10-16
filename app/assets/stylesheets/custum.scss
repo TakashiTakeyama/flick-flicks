@@ -2,8 +2,10 @@
 
 /* universal */
 
-main > .container {
-  padding: 60px 15px 0;
+body > .container {
+  //padding: 60px 15px 0;
+  width: 100%;
+  background-image: image-url("curtain.png") !important;
 }
 
 .show > .container {
@@ -213,11 +215,6 @@ a {
   }
 }
 
-img {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 .video-info {
   padding: 20px;
   a {
@@ -241,6 +238,7 @@ img {
   color: white;
   font-size: 1.5em;
   width: 70%;
+  margin: auto;
   ul {
     color: white;
   }
@@ -294,4 +292,3 @@ img {
   background: -webkit-linear-gradient(to right, rgb(255, 124, 111), #ffc994);
   background: linear-gradient(to right, rgb(255, 124, 111), #ffc994);
 }
-
