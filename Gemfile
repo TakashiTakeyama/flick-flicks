@@ -84,3 +84,4 @@ gem 'bootstrap', '~> 4.3.1'
 gem "font-awesome-rails"
 gem 'dotenv-rails'
 gem 'rails-i18n'
+gem 'fog-aws'
