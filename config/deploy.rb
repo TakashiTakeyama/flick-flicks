@@ -5,7 +5,7 @@ set :application, 'flick-flicks'
 set :repo_url, 'https://github.com/TakashiTakeyama/flick-flicks'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
-set :branch, ENV['BRANCH'] || 'master'
+set :branch, ENV['BRANCH'] || 'aws'
 
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/flick-flicks'
