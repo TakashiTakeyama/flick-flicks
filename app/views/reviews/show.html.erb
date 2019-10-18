@@ -19,17 +19,7 @@
         <%= @review.impression %><br>
         <%= @movie.watched_by + "でみれます！" %>
         <div class="text-center">
-          <% unless @review.user_id == current_user.id %>
-            <% if @favorite.present? %>
-              <%= link_to favorite_review_path(id: @review.id), method: :delete do %>
-                <i class="fa fa-thumbs-up mx-auto" aria-hidden="true">bad</i>
-              <% end %>
-            <% else %>
-              <%= link_to favorite_reviews_path(review_id: @review.id), method: :post do %>
-                <i class="fa fa-thumbs-o-up mx-auto" aria-hidden="true">good</i>
-              <% end %>
-            <% end %>
-          <% end %>
+          <%= render 'reviews/fllow_movie' %>
         </div>
       </div>
     </div>

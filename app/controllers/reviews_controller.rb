@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
 
   def show
     @favorite = current_user.favorite_reviews.find_by(review_id: params[:id])
-    # binding.pry
     # @favorite = current_user.favo.ids
   end
 
