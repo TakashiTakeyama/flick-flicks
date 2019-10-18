@@ -9,8 +9,10 @@
           </div>
           <div class="card-body">
             <p class="card-text text-center"><%= user.name %></p>
+            <% unless user.id == current_user.id %>
             <%= render 'follow_form', user: user %>
-            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center">
+            <% end %>
             </div>
           </div>
         </div>
