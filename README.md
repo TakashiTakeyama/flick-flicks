@@ -57,13 +57,20 @@ https://cacoo.com/diagrams/jBFUDWiVLVBh9r3o/D27DB
 ## 画面遷移図・画面ワイヤーフレーム
 https://xd.adobe.com/view/e637e179-6254-4b02-67ed-ce171fc23bbf-9006/screen/42403ae0-a0de-4087-a09a-73bb815a7964/flick-review
 
-## 使用予定Gem
+## 使用Gem
 gem 'devise'  
 gem 'rails_admin'  
 gem 'cancancan'  
-gem 'omniauth'  
 gem 'kaminari'  
 gem 'google-api-client'  
 gem 'ransack'  
 gem 'carrierwave'  
-gem 'font-awesome-rails'
+gem 'font-awesome-rails'  
+gem 'mechanize'  
+gem 'bootstrap', '~> 4.3.1'  
+gem "font-awesome-rails"  
+gem 'dotenv-rails'  
+gem 'rails-i18n'  
+gem 'fog-aws'  
+gem 'unicorn'  
+gem 'mini_racer',platforms: :ruby

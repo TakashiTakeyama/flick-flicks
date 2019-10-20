@@ -5,7 +5,7 @@
     <div class="video-info justify-content-center d-flex">
     <%= image_tag @movie.image.url, :size =>'320x320' %>
     </div>
-    <div class="review-button justify-content-center d-flex"><%= link_to 'レビューを書く', new_review_path(@movie, @movie.id), class:"btn btn-custom" %>
+    <div class="review-button justify-content-center d-flex"><%= link_to 'post-review', new_review_path(@movie, @movie.id), class:"btn btn-custom" %>
     </div></br>
     <h2><strong>Title&nbsp;&nbsp;</strong><%= @movie.title %></h2>
   <% @movie.reviews.each do |review| %>
@@ -14,7 +14,7 @@
         <div class="col-md-3 text-center">
           <%= link_to review_path(review) do %>
             <%= image_tag review.user.icon.url, :size =>'80x80' %><br>
-            <%= @movie.title %>
+            <%= review.user.name %>
           <% end %>
           <div class="caption">
           </div>
