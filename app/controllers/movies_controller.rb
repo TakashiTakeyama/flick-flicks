@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    @movie = Movie.find(params[:id])
+    redirect_to movies_path, notice: 'その行為はできません'
   end
 
   def create
